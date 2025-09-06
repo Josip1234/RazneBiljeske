@@ -17,3 +17,11 @@ Kor.ime: AkiRahimovski
 Lozinka: aki
 dodaci gosta instalirani 
 naziv hosta: ParniValjak
+mysql access denied for user root localhost using password
+mysql -p (sa sudom)
+upisati password i to je to
+zipanje foldera u linuxu 
+sudo apt-get install zip gzip tar
+zip -r (rekurzivno) my_arch.zip my_folder
+-r (rekurzivno)
+unzip my_arch.zip

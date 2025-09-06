@@ -1,0 +1,15 @@
+.htaccess - maknuti sadržaj datoteke za micanje usera
+ctrl+d ili exit - izlazak iz mysql-a
+ctrl+w(opet) - pretraživanje u nano editoru
+kad kopiramo trebamo paziti da se nalazimo u direktoriju gdje se datoteka nalazi
+.htpasswd i .htaccess se nalaze u /etc/apache2/ folderu
+dobar izgled dozvola
+htpasswd 1-root-www-data
+ako je root neće raditi mijenjamo
+sudo chown root:www-data /etc/apache2/.htpasswd
+praćenje grešaka 
+sudo tail -f /var/log/apache2/error.log
+izlazak ctrl+d ili ctrl+c ili q
+clear - čišćenje terminala
+php_ini - /etc/php/ver.ver/apache2/php_ini.php
+

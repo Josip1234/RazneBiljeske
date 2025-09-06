@@ -1,0 +1,109 @@
+                                  Virtualke, Nano i vi editori, Github, Linux, Composer i Mysql bilješke 
+sudo - i - promjena na super usera (može sudo-su)
+linux shutdown - sudo shutdown -h (now za isključivanje odmah)
+lista svih korisnika - getent passwd
+promjena tipkovnice - loadkeys hr
+github - remove remote repository - git remove rm origin
+ažuriranje sustava - sudo apt upgrade
+auto mount shared folder sudo usermod -aG vbox $USER vbox username -vboxuser
+github global linux config - git config --global user.name "name"
+git config --global helper.store
+git pull 
+lokalne postavke
+git config <n><v>
+globalne git config --global <n><v>
+git config --global credential.helper 'cache --timeout=3600'
+editiranje ~/.gitconfig
+nano ~/.gitconfig
+[USER]  
+email=
+user=
+[CREDENTIAL]
+helper=store
+REBOOT TERMINAL
+git remote -v 
+(koristiti ssh inače za commit treba username i pass (token ili ssh key))
+check server root (systemctl)(apachectl)
+pass za mysql isti kao vm
+login u bazu
+mysql -u root -p 
+(ne zaboravi sudo)
+izlazak iz mysql-a
+quit
+pokretanje-
+sudo /etc/init.d/mysqld start
+stopiranje sve isto pa stop
+restart sve isto pa restart
+nano-ptretraga 
+ctrl+w
+instalacija composera apt-get install composer
+git add all files
+and folders 
+git add .
+vmware user pass
+test1234
+nova virtualka 
+hn:host
+ps:host
+treći host:
+hn: backend developer
+ps: backend developer
+ll - lista foldera i datoteka
+owner -u, other -o, group -g
+save document vi editor 
+:wq - write and quit 
+zz - shortcut (shift + zz)
+(prije toga esc)
+:cq - quit without writing
+ako ne radi - f2 i 
+insert mode
+q+enter(ctrl+q) enter
+Nastavnik: Dinko Šuliček
+Namespace - imenski prostor
+dinko.sulicek@predavaci.algebra.hr
+ls - lista datoteka
+dir - ekvivalent s bojom
+pwd - u kojem smo direktoriju
+cd .. povratak u prethodni direktorij
+cd Do+tab - automatsko dovršavanje upisa
+kopiranje u terminalu - držati 
+shift+ctrl+c copy
+shift+ctrl+v paste
+ili ctrl+x - paste
+ctrl+c - copy
+sudo mysql - ulazak u mysql editor
+tab - samostalno dovršavanje
+cd ~ - vraća u root dokumenta korisnika 
+dr - d dir.
+-r - datoteka
+chmod g- ukloni dozvolu (minus)
+nano -^-ctrl
+m - alt
+git note ne dodaje folder folder treba imati nešto u sebi
+dir nešto - ispis elemenata nekog direktorija
+sudo adduser john
+add user to group sudo usermod -aG examplegroup exampleusername
+add new group
+sudo group add new_group
+view list of groups
+cat /etc/group /cut -d: -f1
+vi editor - escape za cmd i editing mode i za editing mode 
+pregaziti novi znak doći do znaka i stisnuti space
+provjera stanja apache servera
+sudo systemctl status apache2
+provjera firewalla
+sudo ufw app list
+ip a - provjera ip adrese
+sudo cp 1dat 2dat
+-kopiranje sadržaja prve u drugu datoteku
+enable configuration
+sudo a2ensite conf
+disable conf 
+sudo a2dissite conf
+codeshare.io/aYyAqm
+cat /etc/groups
+lista korisnika 
+git config --list
+alias za set upstream
+git push -u origin ""
+cat nešto - printanje sadržaja datoteke u terminalu

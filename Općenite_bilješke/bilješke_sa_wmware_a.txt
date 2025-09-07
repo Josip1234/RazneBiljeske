@@ -1,0 +1,9 @@
+Will EXE files run on Linux? Yes, you can run .exe files on Linux through Wine (a free program). Wine is a compatibility layer that acts between the operating system (Linux) and the file (written for Windows). It is the only way to run .exe files without a copy of Windows. 
+Quick Steps
+I think you should use Wine.
+sudo apt-get install wine
+wine dir/WAV2RAW.exe
+Or Mono if you know that exe is .NET application:
+sudo apt install mono-runtime
+mono dir/WAV2RAW.exe
+ctrl + alt povrtak iz wmware-a

@@ -1,0 +1,54 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "01dd0ac24497ea5089756ea870c34f12",
+    "packages": [
+        {
+            "name": "upaid/contextual-keys",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uPaid/contextual-keys.git",
+                "reference": "ea94361f424876873bd9dcfa9e1caa2d810d1770"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uPaid/contextual-keys/zipball/ea94361f424876873bd9dcfa9e1caa2d810d1770",
+                "reference": "ea94361f424876873bd9dcfa9e1caa2d810d1770",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Upaid\\ContextualKeys\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This package provides a simple way to create contextual keys based on caller class, context, action and key. Useful for dedicated cache classes",
+            "homepage": "https://github.com/uPaid/contextual-keys",
+            "support": {
+                "issues": "https://github.com/uPaid/contextual-keys/issues",
+                "source": "https://github.com/uPaid/contextual-keys/tree/master"
+            },
+            "time": "2018-06-22T10:57:45+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "upaid/contextual-keys": "^1.0"
+    }
+}

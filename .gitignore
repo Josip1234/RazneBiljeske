@@ -2,3 +2,4 @@ novi_dokument.txt
 *.jpg
 novi_direktorij/
 *.zip
+vendor/

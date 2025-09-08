@@ -25,3 +25,13 @@ sudo apt-get install zip gzip tar
 zip -r (rekurzivno) my_arch.zip my_folder
 -r (rekurzivno)
 unzip my_arch.zip
+cannot restart apache
+run apache2ctl -t (možda i -m)
+sintax error (etc/apache2/sites-enabled/parcijalni_ispit.conf/without matching <virtualhost>)
+popravak 
+disable host
+edit conf
+folder nije promjenjen promijeniti folder 
+izaći i spremiti
+enable config again 
+try restart

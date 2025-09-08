@@ -1,0 +1,8 @@
+sudo shutdown now
+skraćeno poweroff
+modificiranje defaultnog foldera xamppa 
+otvoriti config>httpd.conf
+tražimo document root 
+promijenimo iz htdocs u www(oba)
+ako folder ne postoji, napraviti ga
+restartirati xampp

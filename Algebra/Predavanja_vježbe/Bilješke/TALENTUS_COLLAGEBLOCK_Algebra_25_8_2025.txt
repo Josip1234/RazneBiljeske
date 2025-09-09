@@ -1,0 +1,91 @@
+                                                  Predavanje - bilješke
+Nastavnik: Dinko Šuliček
+namespace - imenski prostor
+dinko.sulicek@predavaci.algebra.hr
+                                                  Linux Ukratko
+Operacijski sustav kao windows 
+besplatan je
+open source
+jedan od popularnijih je ubuntu
+siguran 
+radi svuda
+u windowsu postoji powershell i terminal
+osnovne naredbe:
+pwd - u kojem direktoriju se nalazimo
+cd - u koju datoteku se želi ući
+primjer cd docl1
+ls - lista datoteka, mape i datoteke se ispisuju u boji, exe datoteke su u zelenoj
+dir - datoteke i mape se ispisuju bez boje
+rm - brisanje 
+rm jcef_7635.log
+-dosta siguran, ima više verzija
+-ubuntu je najpopularnija 
+-linux služi obično za projekte
+                                                   Datotečni i brojevni sustavi
+Pretvorba iz binarnog u heksadekadski nule ne gledamo
+1011|0110
+8421|8421
+zbrojimo = 116 B6^16
+broj deset u heksadekadskom sustavu predstavlja A, 11 Predstavlja slovo b
+dvoznamenkasti broj zamjenjujemo slovom
+podatke zapisujemo u mape i datoteke koje se nalaze na lokacijama koristeći indeksiranje
+indeksiranje služi za brži dolazak do podataka
+FAT datotečni sustav koristi USB
+NTFS datotečni sustav koriste hard disk ntfs ssd i hdd
+da ponovimo
+pwd je naredba koja ispisuje u kojem direktoriju se trenutčno nalazimo
+ls je ekvivalentna dir razlika je u tome što se ispisuje u boji
+cd predstavlja ulazak u mapu, treba pripaziti na velika i mala slova
+kad dovršavamo ulazak u direktorij ili otvaramo datoteku, kad se drži tab linux samostalno dovrši ostatak
+stisnemo enter
+cd .. (uvijek treba napraviti razmak) naredba s kojom se vraćamo u prethodni direktorij
+mkdir je naredba s kojom kreiramo novi direktorij
+možemo paralelno kreirati više direktorija 
+npr mkdir Prva Druga Treća
+touch je naredba s kojom kreiramo novu datoteku
+mv je naredba koja služi za preimenovanje datoteke, a s njom je i moguće premjestiti datoteku u drugu mapu
+primjer za preimenovanje: mv text.txt tekst.txt
+prvi dio je naziv originala a drugi naziv nove datoteke koja zamjenuje original datoteku
+rm je naredba s kojom brišemo datoteke
+rm -r je naredba s kojom brišemo mapu i sve u toj mapi
+shortcut za tekst ne postoji, zato imamo funkcionalnost za vraćanje naredbi
+koristimo strelicu prema gore
+da bi nešto kopirali i paste-ali koristimo sljedeće naredbe:
+ctrl+x paste
+ctrl+c copy
+sljedećim primjerom mičemo datoteku u novi folder
+mv naziv.txt ../Treća/
+znači mičemo datoteku pod nazivom naziv.txt u mapu koja se zove Treća prije toga izlazimo iz trenutne mape da bi ušli u treću
+kopiranje u terminalu
+držati shift+ctrl+c
+držati shift+ctrl+v
+cd / je naredba s kojom idemo u korijensku mapu
+sudo mkdir test
+primjer kreiranja direktorija sa imenom test
+sigurnosni sustav u linuxu - kad upisujemo šifru, šifra se ne prikazuje
+cd ~ je naredba s kojom se vraćamo u home direktorij trenutnog korisnika računala (root)
+znak tildu možemo dobiti kombinacijom tipki ALTGR+1 
+listu mapa i datoteka sa dozvolama možemo dobiti s naredbama ls -l ili ll
+primjer kako izgleda forma grupa korisnika sa dozvolama
+drwxrwxr - gdje je d direktorij
+-rw-rw-r-- -crtica predstavlja datoteku
+chmod g-w pocetna.html - crticom oduzimamo dozvolu pojedinim korisnicima
+vi editor - postoji 2 moda command mode korištenjem tipki radi se pisanje i brisanje
+editing mode služi za pisanje teksta
+Razlika između vi i nano editora je u tome što u vi-u ima više mogućnosti za uređivanje programskog koda
+Glavna razlika između vi editora i nano je u tome što u vi editoru treba zamaptiti naredbe, dok u nano editoru
+naredbe već pišu. 
+Editori su korisni u linuxu jer se često programeri spajaju na server, i rade promjene preko terminala.
+naredbe u vi editoru
+dd služi za brisanje datoteke
+x je naredba s kojom brišemo znak na kojem se trenutno nalazimo
+navigacije kroz tekst je pomoću tipki pjkl
+u - je undo 
+o - novi redak
+u command modu za izlazak i spremanje koristimo :wq
+u command modu za izlazak bez spremanja koristimo :q!
+nano editor - naredbe
+undo - alt+m
+treba zamaptiti ^ znak predstavlja ctrl, dok slovo M predstavlja alt
+koristeći kombinaciju tipki CTRL+W pretražujemo elemente u datoteci
+s editorima se mogu mijenjati sve datoteke

@@ -1,7 +1,23 @@
                                                   Predavanje - bilješke
 Nastavnik: Dinko Šuliček
 namespace - imenski prostor
-dinko.sulicek@predavaci.algebra.hr
+dinko.sulicek@predavaci.algebra.hr                
+                                                  Operacijski sustavi
+Što je operacijski sustav? Os predstavlja skup osnovnih sustavnih programa koji upravljaju sklopovljem računala
+(Hardware-om) radi ostvarivanja osnovnih funkcija računala ulaz, memoriranje, obrada i izlaz podataka.
+Os omogućuje vezu između sklopovlja i korisničkih programa.
+Mnogi korisnički programi u svom izvođenju pozivaju funkcije koje su sadržane u operacijskom sustavu kroz tzv. API
+(application program interface)
+Operacijske sustave još dijelimo na središnja računala, poslužitelje, osobna računala, minijaturne uređaje,
+pametne kartice.
+Najpoznatiji operacijski sustavi: Linux, Microsoft Windows, Mac OS X
+Najpoznatiji poslužitelji (serveri): Microsoft Windows, Linux
+                                                  Virtualni strojevi
+Virtualni stroj je emulirana računalna sredina koja radi unutar operacijskog sustava i koja se ponaša 
+kao operacijski sustav i može izvršavati računalne programe koji su kompajlirani za tu virtualnu sredinu.
+Java vitrualni stroj, Macromedia Flash Player, Virtual PC, VMware, VirtualBox
+VirtualBox može biti instaliran na Linuxu, Microsoft Windows, Mac OS
+Link za preuzimanje: https://www.virtualbox.org/wiki/Downloads
                                                   Linux Ukratko
 Operacijski sustav kao windows 
 besplatan je
@@ -22,6 +38,9 @@ rm jcef_7635.log
 -ubuntu je najpopularnija 
 -linux služi obično za projekte
                                                    Datotečni i brojevni sustavi
+U srži računala, sve je 0 i 1, orgnizacija takvih podataka nije jednostavna.
+Bit je 1 ili 0, bajt je sastavljen od 8 bita, kilobajt je 1024(tj. 2^10) bajta, megabajt je 1024 kilobajta itd.
+Kada se zapisuje datoteka na disk, zapisuju se na tisuće jedicina i nula koje se kasnije mogu pročitati.
 Pretvorba iz binarnog u heksadekadski nule ne gledamo
 1011|0110
 8421|8421
@@ -32,6 +51,9 @@ podatke zapisujemo u mape i datoteke koje se nalaze na lokacijama koristeći ind
 indeksiranje služi za brži dolazak do podataka
 FAT datotečni sustav koristi USB
 NTFS datotečni sustav koriste hard disk ntfs ssd i hdd
+Ubuntu se pridržava Filesystem Hierarchy Standard za imenovanje datoteka i mapa.
+Taj standard omogućuje korisnicima i softverskim programima da predvide mjesto 
+datoteka i mapa.Mapa razine korijena predstavljen je kosom crtom /.
 da ponovimo
 pwd je naredba koja ispisuje u kojem direktoriju se trenutčno nalazimo
 ls je ekvivalentna dir razlika je u tome što se ispisuje u boji
@@ -66,10 +88,45 @@ sigurnosni sustav u linuxu - kad upisujemo šifru, šifra se ne prikazuje
 cd ~ je naredba s kojom se vraćamo u home direktorij trenutnog korisnika računala (root)
 znak tildu možemo dobiti kombinacijom tipki ALTGR+1 
 listu mapa i datoteka sa dozvolama možemo dobiti s naredbama ls -l ili ll
+U linuxu je sve datoteka. Direktoriji su datoteke, datoteke su datoteke, i uređaji su datoteke.
+Uređaji se nazivaju i čvor, to su još uvijek datoteke.
+Sve datoteke u sustavu imaju dozvole koje dopuštaju ili sprječavaju druge da ih pregledavaju, 
+mijenjaju ili izvršavaju. 
+Super korisnik root ima mogućnost pristupa bilo kojoj datoteci u sustavu.
+Svaka datoteka ima ograničenje s dozvolama kao i ograničenje korisnika
+sa owner/group udruživanjem.
+
+permission action      chmod option
+read       (view)      r ili 4 
+write      (edit)      w ili 2
+execute    (execute)   x ili 1
+
+user   ls output
+owner  -rwx------
+group  ----rwx---
+other  -------rwx
+
+chmod naredba je naredba s kojom se mijenju dozvole. Postoje dva načina za izmjenu dopuštenja, brojevima ili slovima.
+Upotreba slova je većini ljudi lakša za razumijevanje. Prilikom izmjene dopuštenja, budite oprezni da ne biste
+stvorili sigurnosne probleme.
+
+owner je u (Korisnik koji koristi računalo, tj koji je prijavljen na njega)
+other je o 
+group je g
+
 primjer kako izgleda forma grupa korisnika sa dozvolama
 drwxrwxr - gdje je d direktorij
 -rw-rw-r-- -crtica predstavlja datoteku
 chmod g-w pocetna.html - crticom oduzimamo dozvolu pojedinim korisnicima
+
+Vi je zaslonski uređivač teksta koji je izvorno kreiran za unix operacijski sustav.
+Modalni uređivač, djeluje i u načinu pisanja(gdje tipkani tekst postaje dio dokumenta), 
+ili naredbenom načinu (gdje se pritisci tipci tumače kao naredbe koje upravljaju sesijom 
+uređaja).
+Tipkanjem slova i se prebacuje u način za pisanje, ponovno tipkanje slova i
+umetne znak i u dokument. Iz načina pisanja pritiskom na ESC urednik se vraća u naredbeni redak.
+Za uređivanje dokumenta u terminalu je potrebno upisati 
+vi naziv_dokumenta
 vi editor - postoji 2 moda command mode korištenjem tipki radi se pisanje i brisanje
 editing mode služi za pisanje teksta
 Razlika između vi i nano editora je u tome što u vi-u ima više mogućnosti za uređivanje programskog koda
@@ -84,6 +141,14 @@ u - je undo
 o - novi redak
 u command modu za izlazak i spremanje koristimo :wq
 u command modu za izlazak bez spremanja koristimo :q!
+Nano je uređivač teksta za unix računalne sustave ili radna okruženja
+koristeći sučelje naredbenog retka.
+Orijentiran je na tipkovnicu, 
+kontrolira se upravljačkim tipkama.
+CTRL+O sprema trenutnu datoteku.
+CTRL+W ide u izbornik za pretraživanje.
+Nano ima prečace na kraju editora.
+Za uređivanje dokumenta potrebno je upisati nano naziv_dokumenta.
 nano editor - naredbe
 undo - alt+m
 treba zamaptiti ^ znak predstavlja ctrl, dok slovo M predstavlja alt

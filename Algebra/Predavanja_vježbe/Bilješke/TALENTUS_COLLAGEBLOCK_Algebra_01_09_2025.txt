@@ -1,0 +1,105 @@
+Dokumentacija će biti omogućena na ispitu.
+[REJECTED] master ->
+master (fetch first)
+ERROR: FAILED TO PUSH SOME REFS TO (treba li pullat ili pushat)
+kad postavljamo origin, biramo repositorij, može se definirati
+i više repositorija. u jednom trenutku je moguće pushati na
+svoj i drugi repositorij.
+provjera servisa na linux-u
+sudo systemctl status apache2
+(aktivan ili neaktivan)
+vraćanje u shell q
+sudo ufw app list (provjera firewall-a)
+sudo ufw status - (nije uključen, ne trebamo postavljati dopuštenja)
+ip a - da vidimo koje ip su dostupne na linuxu 
+ekvivalent ipconfig na windowsima
+10.2.0.5
+127.0.0.1
+neki fixevi: sudo apt --fix-broken install
+dkp was interupted
+dodavanje nove ip adrese sudo ip addr add 10.0.2.16/24 dev emp0s3
+ip a
+ping www.google.com
+sudo cp 000-default.conf gci.com
+systemctl reload apache2
+sudo apache2ctl configtest
+sudo nano /etc/hosts/
+sudo a2dissite 000-default.conf
+                                                       Konfiguracija apache servera
+upaliti linux
+postavljanje:
+instalacija - na 1-om apacheu može biti 5 domena
+https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu 
+minimalne postavke su za ubuntu 16.04
+1)sudo apt update
+2)apt list --upgradable
+3)naredba za upgrade: sudo apt upgrade
+4)sudo apt install apache2
+5)sudo systemctl status apache2 -
+  provjerimo status servera
+  q - za povratak u shell
+provjera firewall-a (uključen ili isključen)
+sudo ufw app list 
+(koje aplikacije imaju svoj profil za korištenje firewall-a i koji portove
+aplikacije mogu koristiti)
+koji je status firewall-a
+sudo ufw status
+(ako je neaktivan, ne moramo postavljati firewall dopuštenja)
+defaultna localhost početna stranica
+da bi vidjeli adrese koje možemo iskoristiti 
+ip a - omogućava da vidimo koje ip adrese su dostupne na ubuntu linuxu
+lo ip adresa, enp0s3 (ethc) ethernet0
+ekvivalent ipconfigu u windowsima
+iza net 127.0.0.1
+inet 10.0.2.15 (adresa lokalne mreže)
+ukucati u browser, dobiti default apache stranicu
+onda je instaliran
+dodjeljivanje nove adrese
+sudo ip addr add 10.0.2.17/24 dev enp0s3
+ip a provjerimo promjenu
+                                          Postavljanje web virtualnog hostinga
+ping www.google.com / ip adresa: 142.250.74.100
+https://ostechnix.com/configure-apache-virtual-hosts-ubuntu-part-1/ (dz) (name based vm)
+https://httpd.apache.org/docs/2.4/vhosts/ip-based.html
+https://ubuntu.com/tutorials/install-and-configure-apache#1-overview
+stranice se nalaze u /var/www/ mapi
+sudo mkdir /var/www/gci/
+cd /var/www/gci/
+sudo touch index.html
+sudo nano index.html
+pastati html sa stranice
+spremiti ctrl+s
+cd /etc/apache2/sites-available/
+sudo cp 000-default.conf gci.conf
+(kopiramo iz defaultne konfiguracije u novi file)
+datoteka izgleda ovako 
+ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html/
+ls
+sudo nano gci.conf
+ServerAdmin josip@example.com
+DocumentRoot /var/www/gci/
+ukloniti komentar server name
+ServerName GCIexample.com
+spremimo i izađemo
+sudo a2ensite gci.conf - aktivacija stranice
+restart servera
+sudo ili systemctl reload apache2
+može i service apache2 reload
+upišimo GCIexample.com
+ako ne radi 
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+ako je opet isto 
+sudo vi ili nano /etc/hosts
+obrisati prvi 127.0.0.1 ostechnix.lan
+i drugi
+dodati 127.0.0.1 GCIexample.com
+resetirati
+sudo systemctl restart apache2
+disableati defaultnu stranicu (conf)
+sudo a2dissite 000-default.conf
+restart
+upisati 127.0.0.1 u browser
+pripaziti na / upis u conf file-u
+neće raditi ako je recimo gcj bez /

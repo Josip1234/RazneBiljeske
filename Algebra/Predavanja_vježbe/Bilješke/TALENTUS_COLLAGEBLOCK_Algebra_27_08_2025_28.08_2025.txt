@@ -1,0 +1,240 @@
+                                             Github - zabilješke sa predavanja
+.gitignore - je datoteka u koju se stavljaju stavke koje nam nisu potrebne recimo da imamo suvišan kod koji se može skinuti 
+kasnije, možemo spriječiti da ode na github 
+Postoji određeni sigurnosni faktor prilikom prijave na github 
+Ako nemate repositorij, prvo napravite github profil
+sigurnosni faktor je ovakav: 
+kliknite desno na profil>settings>dev.settings>personal access token>tokens(classic) > gen new token >classic
+taj token će služiti kao password kada se stvari budu pushale na github
+lokalni repositorij git zahtjeva određenu identifikaciju korisnika
+provjerimo prvo koliko ima korisnika
+git config --list
+konfigurirajmo korisnika sa sljedećim naredbama
+git config --global user.name="ime"
+git config --global user.email="email"
+git config --list (provjerimo podatke)
+sada imamo nekog u list ako lista nije bila prazna znači da je već bilo profila na lokalnom računalu
+izlistajmo direktorij sa ls
+cd desktop
+kreirati mapu 
+git init
+.git - nevidljiva mapa
+brisanjem .git mičemo vezu (sustav praćenja promjena u lokalnom repositoriju)
+gitghub - je lokacija na koji spremamo kod na udaljenom repositoriju.
+git status
+touch 
+git status
+git add novo.txt
+git add staro.html
+git rm --cached novo.txt
+git status
+git add . (dodaj sve)
+commit - spremanje trenutnih promjena u repositorij
+git commit -m "prvo stanje repositorija"
+git log (dobijemo informaciju tko je napravio koji commit)
+git restore novo.txt (ako nam se ne sviđaju promjene)
+git commit -a - prebacuje u nano (očekuje se poruka)
+CTRL+S 
+CTRL+X
+git commit -a -m "Idući commit teksta"
+-s jednom linijom sprema i commita sve promjene koje smo napravili
+git remote add origin
+git push
+git push --set-upstream origin pero
+Prijava: username
+password: token koji smo kreirali preko github-a
+fork 
+grane - prebacivanje sa git switch ili git checkout-om
+switch je nova verzija koja dolazi
+git push -u (allias za push) 
+checkout
+git branch -d testiranje
+brisanje grane
+		                                                     Predavanja	
+                                               Vježbe - slušanje zapisivanje svega (četvrtak predavanje)
+bootati linux
+git,github
+tko nema github, trebao bi napraviti 
++novi issue,repository
+vlasnik
+upisati naziv repositorija linuxalgebra
+(dobijemo poruku dali je dostupan ili nedostupan)
+vidljivost javan ili privatan
+readme - bilješke potrebne za izvođenje programa
+gitignore - definiramo mape i datoteke koje ne želimo stavljati u repositorij
+licence - opisuje definirane uvjete korištenja aplikacije
+link kod https - nastavak git
+dodaci kako se kreiraju novi repositoriji na linuxu
+brisanje repositorija - settings - delete repository
+(trostruke sigurnosne postavke)
+*.iws - sve datoteke sa iws ekstenzijom iws se ne bi trebale 
+uploadati na github
+sigurnosni faktor za linux
+treba profil 
+settings
+pod settings skroz dolje
+developer settings 
+personal access tokens
+tokens classic
+generate new token
+generate new token(classic)
+PR.algebraphp
+trajanje 30 dana
+scope: repo(da možemo upravljati repositorijima kojima pristupamo)
+spustimo se dolje
+generate token
+kopirati token u datoteku (email,codeshare)
+codeshare.io-za djeljenje koda
+zaljepiti kod, otvoriti stranicu na ubuntu sa zadanim serijskim kodom
+                                                    Rad u linuxu
+otvori terminal
+git --version -provjera verzije
+instaliranog github-a
+otići na git-scm.com
+desna strana- download for linux 
+upute za instalaciju (instalacija kroz terminal)
+apt-get install git
+sudo apt install git
+kad instaliramo, treba provjeriti verziju
+kad smo provjerili verziju, trebamo informacije o korisniku
+koji koristi računalo
+kako bismo znali tko je u kojem trenutku napravio kakvu promjenu
+git config --list
+dobijemo prazno polje ako nema definiranih postavki i korisnika
+git config --global user.name "vaše ime"
+enter strelica gore umjesto .name upisati email "svoj email"
+git config --list
+projerimo imamo li upisane podatke
+imamo git, imamo podatke, treba repositorij
+kreirajmo mapu
+cd Desktop De+tab
+mkdir PrviGit
+cd PrviGit
+možemo otvoriti mapu u exploreru
+u mapi sa lijeve strane files
+tri crtice uključiti hidden files
+vratiti se u terminal
+git init
+prilikom kreiranje git repositorija, .git mapa je skrivena 
+kad obrišemo .git,a  git je veza prema github repositoriju, 
+i želimo pushati na svoj, potrebno je obrisati .git mapu 
+i ponovno inicijalizirati repositorij
+u mapi se nalaze mape i datoteka za praćenje promjena
+github - lokacija gdje spremamo kod na udaljeni repositorij
+git status - u svakom trenutku kaže na kojoj grani se nalazi, koliko imamo 
+commita i imamo li određenih datoteka ili dokumenata koje želimo pratiti
+napraviti dvije tekstualne datoteke
+touch novo.txt staro.html
+dvije strelice prema gore git status
+dodatak - ima dvije datoteke čije se promjene ne prate
+git add novo.txt (tab dovrši) enter
+git status
+nova kategorija - promjene koje se mogu pohraniti
+za uklanjanje git rm --cached 
+git rm --cached novo.txt
+(undo akcija)
+git status
+git add . (dodaj sve promjene)
+commit - spremanje trenutnih promjena u repositorij
+git commit -m "Prvo stanje repositorija"
+git log - sadrži informacije tko je i kad napravio koji commit
+VJEŽBA - probati napraviti novu datoteku
+       - datoteku dodati za commitanje
+       - datoteku komitati sa porukom novo stanje repositorija u kojem se nalazimo
+touch novadatoteka.txt
+git status
+git add .
+git commit -m "Novi commit"
+git log
+ls
+nano novo.txt
+PHP Developer
+Četvrtak 28.8.2025
+Vježbamo git!
+Spremiti ctrl+o ili ctrl+s
+izaći ctrl+x
+upisati git status 
+dvije poruke - git add - dodaj za 
+-git -restore zanemari promjene
+git restore novo.txt
+datoteka prazna
+Dodao sam novi text
+koji sam nekad obrisao!
+git add novo.txt
+git status
+git commit -m "Dodan tekst u datoteku nova"
+Dodajmo još teksta .....
+git status
+git commit -a (spajamo 2 koraka u 1)
+git commit -a
+otvori se nano
+uvijek očekuje poruku
+treba dodati i -m
+upiši Dodana treća linija teksta!
+spremiti ctrl+s,ctrl+x
+commit napravljen
+git status
+dsdadasd
+git status
+kad imamo spremnu promjenu
+za commitanje može se dodati i -m (dodaj poruku u istoj liniji)
+git commit -a -m "iduća linija teksta"
+                                           Kreiranje udaljenog repositorija
+Povezivanje lokalnog i remote repositorija
+git remote add origin "blablabla"
+              (quick setup)
+kopirati adresu repositorija
+iz https sa nastavkom .git
+git remote add origin "kopirana adresa"
+shift+ctrl+v - za lijepljenje kopiranog sadržaja u terminal
+enter
+git push (mora imati neku vezu prema udaljenom repositoriju)
+git push --set-upstream origin pero
+git push --set-upstream origin pero(ne zaboraviti tab)
+korisničko ime - /josip1234/ - username ime repositorija
+lozinka - token koji smo generirali
+ctrl+shift+v
+vježba - vratiti se u terminal
+kreirati datoteku 
+comittati
+pushati na udaljeni repositorij
+kraće --setupstream (drugi put)
+uvijek pita password za ponovni push
+kad se bude nešto radilo, pushat će se samo jednom kad bude gotovo.
+za kloniranje drugog repositorija 
+drugi folder 
+cd..
+mkdir KloniraniGit
+cd Klon+TAB
+git clone "adresa"
+Uobičajeno će se javiti greška prilikom pusha, korisnik kojemu nije dopušteno pushati na 
+tuđi repositorij biti će javljena greška
+pokušati napraviti promjenu 
+denied 403
+ako se želi koristiti kod, obrisati .git mapu ponovno inicijalizirati git i pushati na vlastiti github
+moguće je forkati repositorij, napravimo kopiju, koje preuzimamo na računalo i možemo uređivati
+vlasnik prati tko je kod iskoristio, kad i tko pokušava unjeti promjene
+cd ..
+cd PrviGit
+branchevi
+git branch - popis svih branchova u svojim projektima
+-sigurno okruženje za razvijanje svog dijela projekta
+grane je potrebno brisati ako ne treba
+git branch testiranje
+git branch
+git checkout ili switch testiranje
+git branch
+touch grana.txt
+git status
+git add grana.txt
+git commit -m "Nova grana"
+git push -u origin testiranje (setupstream alias)
+git checkout pero ili master, main
+git pull - provjera dali je kod ažuriran sa
+udaljenim repositorijem
+git merge testiranje - spajamo granu sa master
+git branch -d testiranje -briši granu
+git push 
+username
+password 
+git status

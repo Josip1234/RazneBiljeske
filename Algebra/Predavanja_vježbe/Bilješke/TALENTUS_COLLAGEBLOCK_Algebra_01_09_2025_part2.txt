@@ -1,0 +1,54 @@
+                                              INSTALACIJA MYSQL, PHP
+sudo apt install mysql server
+kreiranje root usera i lozinke
+sudo mysql - ulazimo usql
+exit - izlazimo iz sql-a
+clear - čišćenje terminala
+mysql --version
+sudo mysql
+postaviti privilegije za usera
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'aaa';
+FLUSH PRIVILEGIES; - za osvježavanje korisničkih podataka koje smo dobili
+EXIT; (izlazimo iz sql-a) (ctrl+d)
+pokrenuti sudo mysql_secure_installation
+lozinka-jačina 0
+remove annonymus user N (ko ne)
+disallow root login remotely - y
+remove test database and access to it -n
+(za produkciju da)
+reload privilege  tables now? y
+sudo mysql
+show databases;
+                                             Instalacija php-a
+-može se izvršavati i pomoću terminala
+-php interpreter
+sudo apt install php libapache2-mod-php php-mysql
+php -v -provjera verzije
+clear
+php.ini - konfiguracijska datoteka za php
+cd /etc/
+cd php
+ls
+cd 8.3/
+ls
+cd apache2
+ls
+sudo nano php.ini
+UPLOAD_MAX - (veličina file-a koja se može uploadati)
+ctrl+w - upload_max
+umjesto 2m staviti 5m (megabajt)
+spremiti i izaći
+cd /var/www/html
+sudo cat
+ls
+sudo nano prva.php
+upisati neki html
+izaći
+pokrenuti na browseru
+pokrenuti na terminalu
+php php_skripta.php (sadržaj sa izvršenim kodom)
+cat php_skripta.php (sadržaj datoteke)
+kopirati prva.php u gci
+treba biti u mapi datoteke gdje se ona nalazi 
+kad se kopira
+sudo cp prva.php /var/www/gci/

@@ -103,3 +103,160 @@ restart
 upisati 127.0.0.1 u browser
 pripaziti na / upis u conf file-u
 neće raditi ako je recimo gcj bez /
+
+problem gci je izgubila sadržaj
+izbriši gci 
+kopiraj originalnu datoteku 
+izvršiti izmjene po koracima
+pokupiti sa tutorijala primjer
+config datoteke ukoliko su sve original
+datoteke obrisane
+ne može se brisati više stvari odjednom
+u nano editoru
+ip based
+cat (sadržaj datoteka usred terminala)
+.htaccess - maknuti ako želimo maknuti usere
+ctrl+d izlazak iz sql-a
+ili exit može i quit
+ctrl+w pretraživanje u nano editoru
+kad kopiramo, trebamo paziti da se nalazimo u direktoriju 
+datoteke koju kopiramo
+                                          postupak a-ž
+problem sa zadatkom:
+        gci conf je izgubila sadržaj kopirati iz originala u gci conf
+        sudo cp 000-default.conf gci.conf
+	ako je original prazna kopirati iz tutorijala
+web adresa:
+  	ubuntu.com/tutorials/install-and-configure-apache#4-setting-up-the-virtualhost-configuration-file
+(server admin, document root i server name)
+ne može se obrisati više stvari odjednom (prednosti linuxa)
+ip based - https://httpd.apache.org/docs/2.4/vhosts/ip-based.html
+web stranice možemo objaviti pomoću dvije vrste hostinga:
+1)name based - na istu adresu localhosta kojeg imamo upisujemo
+različite nazive što su bili u conf. datoteci pod hostove pod gci primjer
+dz. što smo prošli još jednom
+2)ip-based - zadnji link pogledati, tamo gdje smo imali vhostove u 
+config datoteci, gdje smo navodili naziv, u ovom slučaju imamo
+dvije datoteke koje su u biti dvije naredbe koje specificiraju dva
+različita vhosta, svaki od njih imanekakve svoje nazive i svoje podatke
+koje smo mogli vidjeti u našoj config datoteci
+virtual host dio - svaki ima svoju različitu ip adresu
+zbog toga kad smo konfiguirali network, smo stavili u njega dvije ip adrese 15 i 16
+koja se maknula i trebamo ih napraviti ponovno
+možemo pokrenuti ip a
+sa linka si možemo onda isprobati ip servera za svaki virtualhost
+otvoriti gci datoteku
+trebamo dodati 
+<Directory /var/www/gci>
+          AllowOverride All
+</Directory>
+Potreban za zadnji dio, postavljanje htaccess datoteke, kad otvorimo, 
+možemo ići na zadnji link
+Directory se odnosi na datoteku u kojoj se nalazi naša web stranica
+zalijepiti ispod document root-a u konfiguracijskoj datoteci.
+kad postavljamo konfiguracijske datoteke, koje rade nekakve stvari,
+a koje utječu na promjene neke sistemske datoteke (apache server),
+treba nam naredba koja će reći serveru unutar našeg servera, da 
+te naredbe omoguće override na drugim postavljenim mjestima
+.htaccess - postavljamo određene direktive s kojima možemo 
+blokirati i dozvoliti neke datoteke.
+https://www.askapache.com/htaccess/htaccess-wikipedia/
+                                           Zaštita username-om i passwordom
+prebaciti se u terminal
+vratiti se u projekt koji smo radili
+cd /var/www/gci/
+ls
+napraviti poseban direktorij
+sudo mkdir private
+kreiramo novi direktorij u našoj aplikaciji koju ćemo otvarati i u taj direktorij
+kopirati ćemo indeks.html datoteku
+sudo cp indeks.html private
+cd private
+ls
+preimenujmo datoteku
+sudo mv indeks.html prva.html
+ako otvorimo u pregledniku
+http://gci.example.com/private/
+dobijemo prikaz datoteke koja se nalazi
+da bi napravili htaccess datoteku,
+trebamo kreirati 
+sudo nano .htaccess
+(točka označava da je datoteka skrivena)
+U datoteku ćemo dodati sljedeći kod
+(datoteka će sadržavati jednostavnu autorizaciju, tip autorizacije, korisničko ime i lozinku)
+to dodajemo u .htaccess datoteku
+AuthType basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+Require valid-user
+AuthName je poruka koja se pojavi kad se prikaže taj dio web aplikacije
+userfile - definiramo gdje se nalaze
+korisničko ime i lozinka koji su nam potrebni za pristup
+valid-user.-specificira se da mora biti neki korisnik koji postoji da bi mogao pristupiti toj stranici
+spremimo
+izađemo iz dokumenta
+trebamo kreirati lozinku i korisničko ime za tu osobu koja pristupa stranici
+sudo htpasswd -c /etc/apache2/ .htpasswd naziv korisnika (sljedi upis korisničkog imena i lozinke za pristup zaštićenim datotekama)
+-c služi za kreiranje same datoteke
+ukucati lozinku (primjer 111)
+nakon kreiranja
+napraviti provjeru /etc/apache2/htpasswd dozvola
+ls - l /etc/apache2/.htpasswd
+treba izgledati ovako:
+-rw-r--r-- 1 root www-data 46 SEP 3 16:32 /etc/apache2/.htpasswd
+ako umjesto data postoji root 
+trebamo promijeniti to sa
+sudo chown root:www-data /etc/apache2/.htpasswd
+chown - promjena ovlasti na određenim direktorijima
+ls - l /etc/apache2/.htpasswd
+sad bi trebalo biti www-data
+to je potrebno napraviti da bi se uspješno radila
+htpass datoteka i da bi se tražilo korisničko ime i lozinka za 
+koji je postavljen taj dio
+nakon toga potrebno je restartirati server
+sudo systemctl restart apache2
+upišimo u preglednik 
+http://gci.example.com/private
+sada bi trebalo tražiti korisničko ime i lozinku
+nakon logina dobili bi pristup direktoriju
+                                          Greške i problemi
+ne traži pass, nešto je krivo
+preskočen korak nakon sudo nano .htaccess
+nakon ispravka otvoriti primjer ako ne traži password
+zaboravljen korak na početku 
+sudo nano /etc/apache2/sites-available/gci.conf
+nije ubačen directory
+ubaciti i to
+resetirati server
+pokrenuti
+radi!
+dosta propusta da fali directory u conf file-u!
+internal server error - (možda zbog root umjesto www.data)
+nema passworda, zaboravljena lozinka
+otvoriti gci conf cd /var/www/gci/private
+ls
+nema htaccess datoteke?
+postoji
+sudo nano .htaccess
+ok je 
+kreiranje lozinke - kor napravljen
+resetirati server
+vratiti se na primjer
+i dalje internal server error
+čak i nakon logina
+treba istražiti zašto internal server error
+ponoviti vježbu sa zadatkom za dz
+dovoljna samo jedna stranica
+može samo indeks.html sa html-om
+cat - može se otvoriti datoteka unutar terminala i prikaže sadržaj datoteke
+sudo cat /etc/apache2/sites-available/gci.conf
+sudo tail -f /var/log/apache2/error.log
+praćenje grešaka (ispisivanje)
+izlazak ctrl+d
+ctrl+c ili q
+ako želimo maknuti usere potrebno je samo obrisati stavke iz .htaccess datoteke
+(greška, ako je stavljeno .htpassswd a ne .htpasswd)
+htpasswd se nalazi u /etc/apache2/
+sites available (config files)
+- /etc/apache2/sites-available/
+stranice su u /var/www/html/ 

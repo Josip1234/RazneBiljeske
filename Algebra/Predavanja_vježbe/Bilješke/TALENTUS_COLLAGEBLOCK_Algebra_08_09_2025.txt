@@ -1,0 +1,114 @@
+                                                  PHP - POČETAK
+Nastavnik: Milan Krivić
+Kontakt email: milan.krivic@predavaci.algebra.hr
+                                                 OSNOVE HTML-A
+-ideja - da bude hipertekstualni sustav
+-1991.godine
+-cern Tim Berners-Lee
+-www
+-1995. prvi oblik
+-HTML5 2014 današnji standard
+-klik na link nastao 90-ih godina
+-nije programski jezik
+-browseri: chrome,safari, edge, opera
+-imaju ekstenzije .htm,.html
+-nema razlike između njih
+-.htm - za čitanje na starijim verzijama 
+-mora imati i strukturu
+-skinuti xampp 
+-nisu potrebni serveri
+-može se pisati u običnom notepadu
+-samo za statičke sa javascriptom
+-html se može pokretati dvoklikom
+continue yes
+ok
+po defaultu, next
+c/xampp
+next
+pričekati
+kontrole za pokretanje yes
+xampp - kompletan instalacijski paket 
+za php,mysql,apache
+po želji možemo sami podešavati nakon instalacije
+yes do you want to start
+bitno startati apache modul
+kako pristupiti stranici
+c://xampp/htdocs  svi projekti, filovi inicijalizacije
+config
+configuracija htdocs index.php
+dashboard
+možemo promijeniti 
+otvorimo config>httpd.conf
+tražimo root (document root)
+promijenimo iz htdocs u www
+ako ne postoji folder, treba napraviti isti
+napraviti restart 
+instalirati visual studio kod
+x-ua compatible  - kompatibilni za starije preglednike
+view > word wrap
+alt+z
+align justify  - tekst poravnat sa obje strane (centrirano)
+dz. u nesređenu listu staviti linkove
+# - sharp pojam
+                                                  VIDEOZAPIS ANALIZA
+Što je html?
+Kratica za hypertext markup language
+nekakav jezik za izradu web stranica
+Inicijalna ideja html-a je bila da bude neki hipertekstualni sustav, znači tekst koji nije linearan, kao knjiga, 
+već je povezan sa linkovima.S njega čitatelj može skočiti na neke povezane informacije 
+Prvi put je predstavljen 1991.godine Tim Berners Lee
+Jedan od znanstvenika u cernu (europski centar za nuklearna istraživanja)
+Radio je na sustavu da omogući znanstvenicima da razmjenjuju dokumente, rade istraživanja na jednostavan način
+Tako je nastao www a iz tog sustava je izrastao html
+Bez html-a danas, ne bi imali web stranice onakve kakve poznajemo i omogućuje da tekstualni dokumenti 
+dobiju neku strukturu, oblik, smisao i poveznice prema drugim dokumentima.
+S vremenom se razvijao kroz različite verzije.
+HTML 2.0 - 1995. kao prvi standardni oblik
+HTML 4.01 - 1999. kao dugogodišnji standard
+XHTML - kao pokušaj uvđenja strožih pravila
+HTML5 - današnji standard, 2014.godine s podrškom za video, audio, canvas i sve druge stvari
+lokalno spremanje podataka i tako dalje
+Revolucija nastala 90-ih, danas se uzima zdravo za gotovo
+Zašto kao hipertekst?
+Klasičan tekst je nešto što se čita kao knjiga, npr. novinski članak, itd.
+Hipertekst je proširenje tog koncepta, skok na drugu stranicu ili neki drugi dio dokumenta
+ili kasnije već bilo gdje na internetu
+Temelj cijelog www-a je zapravo povezanost dokumenata pomoću linkova
+HTML-om se oblikuje sadržaj, stvaraju se hiperveze tekstualnog i hiperteksualnog dokumenta
+Preglednik je taj koji nam omogućuje prikaz tih dokumenata
+HTML nije programski jezik, niti su ljudi koji ga koriste programeri
+Čita html kod i na temelju oznaka čita slike, videa.
+HTML pregledniku se daju upute kako će on prikazati taj sadržaj
+chrome, firefox, edge, safari, opera, itd.
+Jezik za označavanje
+Ima svoje ektenzije, .html ili .htm
+Razlika: (nema) htm standard je nastao na početku, koristili su ga stari dos sustavi windows 31 i poslije došao html standard
+i htm se danas isključivo koristi za čitanje na starijim operacijskim sustavima
+html mora imati strukturu koja se sastoji od nekakvih dijelova, headera, zaglavlja, title-a, body-a
+Osnovna struktura:
+dokument započinje html-oznakom
+postoji heading, koji ima neki title, 
+postoji body, koji može imati elemente poput h1,p i slično
+header(title,metadata,externi js i cssfilovi)
+PRIMJER OSNOVNE STRUKTURE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device.width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Osnovna struktura</title>
+</head>
+<body>
+</body>
+</html>
+xampp ili vampp
+za pisanje koda koristimo visualstudio code
+instalacija xamppa
+apachefriends.org/download.html
+odabiremo verziju 8.2.12
+moguća je pojava grešaka zbog antivirusnog programa ili UAC-a
+potrebno je dopuštenje za otvaranje 
+za html nisu potrebni nikakvi serveri
+njega doslovno možemo otvoriti i pisati kod  notepadu(običnom)
+spremiti na lokalno mjesto, pokrenuti  

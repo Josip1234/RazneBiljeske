@@ -1,0 +1,146 @@
+                                                .gitignore
+vratimo se na git
+otvorimo git projekt
+cd desktop PrviGit
+ls 
+(bilo koji projekt gdje imamo git repositorij)
+git status
+kad radimo projekt, ne želimo sve datoteke objaviti
+na udaljeni repositorij jer nam nisu potrebne, 
+jer su velike i mogu se preuzeti naknadno
+koristimo .gitignore (skrivena datoteka)
+datoteka kaže githubu da ne šaljemo zadane
+filove na udaljeni repositorij
+dodajmo touch.gitignore
+nano .gitignore
+nekoliko tipova koje možemo ignorirati 
+1)datoteka -grana.txt
+#ignore specifičnu datoteku
+#-komentar u gitignore
+2)tipove - *.jpg, *.html, (sve datoteke koje imaju nastavak)
+* - zamjenjuje sve
+#ignore tipove datoteka
+3)Direktorija - proba/,
+#ignore mapu/direktorij
+prilikom pusha sve će se uploadati osim navedenih u gitignore datoteci 
+zatvori datoteku
+pushaj na udaljeni repositorij
+ako se napravi datoteka ili mapa koja je stavljena na ignoriranje, 
+neće pushati u sustav
+uobičajeno stavljamo na početku projekta
+napraviti novi direktorij ili datoteku koja je u gitignore-u
+probati poslati na github 
+greška: ako je .gitignore stavljen u .gitignore gitignore se neće poslati
+na github
+počistiti terminal sa clear
+                                                  Composer
+dodatak za php ili upravitelj paketa 
+omogućuje instalaciju php aplikacija 
+dostupni na packagist - njihovo glavno spremište
+omogućuje automatsko učitavanje paketa
+packagist.org
+paketi se mogu iskoristiti i dodati u svoj kod
+browse
+popularni, random
+kad otvorimo paket imamo instrukcije za instalaciju
+postoji i dokumentacija i primjeri koda
+instalacija 
+tutorijal:
+https://www.digitalocean.com/community/tutorials//how-to-install-and-use-composer-on-ubuntu-20-04
+sudo apt update
+upgrade (prema potrebi)
+sudo apt install php-cli unzip
+(instalacija mora biti u home direktoriju)
+cd~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+ako traži instalaciju curla, instalirati i to sa sudom
+altgr+1 - znak za tildu
+sudo apt install curl #version 8.5.0. -2 ubuntu 10.6
+provjeriti/verificirati composer
+kopirati hash
+echo $hash
+provjera instalacije
+kopirati php kod
+s hashom uspoređujemo dvije datoteke jesu li ispravno preuzeti datoteke ili podaci
+recimo imamo kriptiranje lozinke
+kad se kriptira u bazi, kriptira se pod nekakvim ključem te lozinka bude spremljena
+pod nekakvim nizom znakova koji se dogodi
+ako znamo s kojim ključem je lozinka kriptirana, ako znamo kako lozinka treba 
+izgledati, i usporedimo taj hash kod  koji je zapisan u bazi, sa kombinacijom 
+kriptiranja lozinke koju mi znamo, ako su ta dva hasha identična, znači da je lozinka 
+ispravna
+hash kod se koristi kao najčešća provjera je li nešto ispravno
+php kod ako javi da je verifikacija instalacije verificirana, možemo dalje
+php uspoređuje hash file od composera sa hashem kod nas na računalu, i onda kaže da je instalacija uspješno
+bila izvršena.
+instalacija composera(ovo gore je bila priprema)
+za globalnu instalaciju, trebali bi instalirati u /usr/local/bin kako bi svi korisnici
+mogli koristiti composer
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+nakon instalacije dobijemo zelenu poruku
+za provjeru za uspješnu instalaciju pokrenimo composer
+composer
+dobijemo navedeno da je composer instaliran 
+instalacija paketa
+primjer slugify
+paket instaliramo u direktorij gdje nam je potreban, globalna instalacija
+nije potrebna (na razini projekta gdje radimo)
+vratiti se u prvi direktorij
+cd~
+mkdir slugify
+cd slugify/
+pokrenuti composer init
+primjer algebra/slugify
+prvi dio upišemo, ostalo preskočimo
+n - preskakanje (ako traži)
+ostalo ostaje prazno
+package nameee prepišemo smeđe
+author - preskočimo na n
+min. stability - prazno
+dependencies require - možemo preskočiti -n
+u nastavku isto preskočimo -n
+confirm generation yes
+naziv paketa se nalazi unutar inicijalizacijske jedinice
+nakon instalacije dobijemo composer.json
+struktura datoteke
+{
+  "name":"algebra/slugify",
+  "require":{}
+}
+nazivi paketa koji su potrebni da bi naš kod radio normalno ne pushamo na github,
+već composer.json datoteku u kojoj se nalazi dependency koji su potrebni da bi
+projekt bio funkcionalan, kad neka osoba preuzme naš projekt, i napravi build, 
+na svom računalu komposer će prepoznati ove datoteke da se tu nalazi  određeni
+paket za rad neke aplikacije i automatski ga preuzme na svoje računalo
+kao što ćemo ga preuzeti kad budemo koristili naredbu za preuzimanje paketa
+za instalaciju paketa, koristimo 
+composer require cocur/slugify
+(procedura za bilo koji paket)
+ls
+dobili smo novu mapu vendor
+u sebi ima određene datoteke potrebne za izvršavanje paketa, tj. korištenja
+cat autoload.php
+većina ga ima, koristi kod koji će ubacivati paket u projekt
+ubacujemo uvjet kada ga koristiti unutar samog koda kad napravimo datoteku,
+ubacujemo potrebu da se koristi točno ta i ta datoteka u projektu i onda
+imamo naredbe koje dolaze vezano uz paket koji smo napravili unutar mape
+u kojoj smo bili 
+cd..
+slugify
+napravimo test.php
+nano test.php
+zaljepiti poruke tj kod naveden u onom dijelu
+spremimo
+pokrenimo sa test.php
+php test.php
+da bi napravili slug
+slug - u url-u je to primjer
+/tutorials/how-to-install...
+na webu nikad nemamo zapisan tekst kao što je u nazivu, zapisujemo uvijek u obliku sluga koji se koristi
+pokretanjem skripte kreiramo objekt slugify koji pretvara određeni tekst koji smo napravili u slug
+fatal error (fali ext mbstring)
+sudo apt install php-mbstring
+onda radi 
+apt search mbstring
+sudo apt install php-mbstring
+pratiti upute dokumentacije prilikom instalacije paketa!!!

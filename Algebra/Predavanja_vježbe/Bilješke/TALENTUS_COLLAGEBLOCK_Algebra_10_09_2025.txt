@@ -291,3 +291,81 @@ html struktura
 echo "<h1>Operatori u php-u</h1>";
 omogućuju izvršavanje operacija nad zbrajanjem, oduzimanjem itd.
 unarni, binarni, ternarni operatori
+echo "<h2>Operator dodjele</h2>";
+dodjeljuje vrijednost varijabli  koja se nalazi na lijevoj strani, dok se vrijednost 
+nalazi na desnoj strani
+$broj=10;
+echo "<br>Broj:".$broj;
+$broj=20;
+echo "<br>Broj:".$broj;
+pregazili smo vrijednost varijable broj
+ako trebamo sačuvati varijablu trebali bismo napraviti 
+neku privremenu varijablu i staru(prethodnu) vrijednost 
+spremiti u nju.
+$temp=$broj;
+echo "<br>Broj[prije nove dodjele imao je vrijednost:$temp]";
+REFERENCA
+$a=5;  VRIJEDNOST B OSTAJE NEPROMIJENJENA
+$b= $a; VRIJEDNOST A POSTAJE 6
+$a=6;
+echo "<br>Vrijednost a je: $a";
+echo "<br>Vrijednost b je: $b";
+$a=5;
+$b=&$a;
+$a=6;
+echo "<br>Vrijednost a:$a";
+echo "<br>Vrijednost b:$b";
+STRING OPERATORI
+Operator . koji spaja više stringova u 1
+$izraz="iznosi";
+$br1=10;
+$br2=5;
+echo "<br>Zbroj ".$br1." i ".$br2.$izraz." ".($br1+$br2)";
+echo "<br>Broj: ".$broj;
+ARITMETIČKI OPERATORI
+Operatori koje svakodnevno koristimo u životnim operacijama
++,-,/,* i % (djeljenje s ostatkom)
+$broj1=20;
+$broj2=7;
+$rezultat=$broj1+$broj2;
+echo "<br>Rezultat operatora + je:".$rezultat;
+echo "<br>Broj1:".$broj1;
+echo "<br>Broj2:".$broj2;
+$rezultat=$broj1-$broj2;
+echo "<br>Rezultat operatora - je:".$rezultat;
+$rezultat=$broj1*$broj2;
+echo "<br>Rezultat operatora * je:".$rezultat;
+$rezultat=$broj1/$broj2;
+echo "<br>Rezultat operatora /  je:".$rezultat;
+$rezultat=$broj1%$broj2;
+echo "<br>Rezultat operatora % je:".$rezultat;
+Rezultat djeljenja bi trebali zaokružiti sa round() funkcijom
+na tri decimale round($rezultat,3)
+Rezultat će biti zaokružen na tri decimale 
+% - djeljenje s ostatkom, rezultat ostatak
+kreirajmo dva random broja -ctrl+q kratica za brzo 
+dodavanje komentara na određeni broj linija koda, 
+zacrniti ctrl+q, zakomentirati i otkomentirati
+$broj1=rand(10,20); (donja granica, gornja granica) - granice
+$broj2=rand(10,20);
+primjeniti na prethodne rezultate
+INKREMENTACIJSKI OPERATORI
+echo "<h2>Inkrementacijski i dekrementacijski operatori</h2>";
+Operatori koji povećavaju li smanjuju vrijednost za 1.
+var++ - ada je operator ispred varijable
+++var - kada je operator iza varijable
+isto vrijedi i za --
+echo "<p>Operator var++</p>";
+To je operator koji prvo ispiše vrijednost, 
+a u idućoj iteraciji poveća za jedan.
+$x1=5;
+echo '<br>Varijabla $x1 iznosi:'.$x1;
+echo '<br>Varijabla $x1++ iznosi:'.$x1++;
+povećava za jedan dobijemo ponovno 5
+prvo ispiše vrijednost varijable, pa je onda
+poveća za jedan, što znači da u idućoj iteraciji 
+kada budemo htjeli ispisati x1 on će iznositi tek
+sada 6
+echo '<br>Varijabla $x1 iznosi:'.$x1;
+prvo ispiše vrijednost, pa uveća za 1
+

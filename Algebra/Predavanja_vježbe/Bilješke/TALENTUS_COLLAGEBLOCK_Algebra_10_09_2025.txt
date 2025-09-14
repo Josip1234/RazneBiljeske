@@ -1,0 +1,138 @@
+                                                  OSNOVE PHP-A
+php - hypertext preprocessor (personal home page tools) 1994.godina
+sličan c-u
+1995. prva verzija
+1999 -
+PHP7 2016
+PHP 8
+nije bio namijenjen kao jezik
+evoulirao u jezik za izradu web stranica
+najrasprostranjeniji za izradu web aplikacija (interaktivno, osim statičkog sučelja,
+postoje interakcije)
+wordpress - kreiran u php-u
+facebook
+neprekidna nadogranja
+trenutna verzija 8.4
+c://windows//system32/drivers/etc/hosts
+operatori.php nadopuniti skriptu dobivenom od nastavnika
+                                                  postupak a-ž
+Što je php? Programski jezik koji je
+nastao 1994.godine kada ga je Rasmus
+Lerdorf napisao ao naredbu u c-u
+za praćenje posjeta svojoj osobnoj stranici
+Interpretirani server side programski jezik
+koji se orijentira po sintaksi c-a, on je 
+nazvan u početku kao personal home page
+tools prva javna verzija je objavljena 1995.
+godine kada je kao izvorni kod alata php 
+interpreter nastao koji je omogućavao obradu
+obrazaca, interakciju sa bazom podataka
+tada se je mogao proširivati i doprograminjivati,
+ispravljati kod a daljnji razvoj je 
+išao od 1999. kada je nastala verzija 4 prije
+se koristio zend engine zatim PHP7 2015/2016
+godine kada je donio zend engine 3, pojačana
+brzina za wordpress PHP8 je isto tako donio
+poboljšanu sintaksu i nekakve napredne stvari 
+taj jezik zapravo ije bio namjenjen da se
+stvori kao jezik po konceptu, nego je Rasmus
+htio riješiti neki vlastiti problem tj.
+posjet(broj posjeta) na web stranici i tako 
+je evoluirao iz alata za praćenje posjeta
+u jezik za izradu dinamičkih web stranica
+on je pretežito server side scripting jezik
+koji je široko rasprostranjen danas jedan od
+najrasprostranjenijih open source programskih
+jezika za izradu web stranica odnosno 
+web aplikacija (web stranica je više statična,
+malo dinamična preko javascripta i tako dalje)
+webaplikacija - interaktivna, osim svog
+statičkog sučelja, ima nekakvu dinamiku u 
+backendu,koja se izvodi baš pomoću php-a,
+široko rasprostranjen a najviše ga koristi
+wordpress, najkorištenija cms platforma
+bazirana na php-u, oko 40% webstranica
+danas i nekakvi portali poput društvenih
+mreća(facebook), portali poput wikipedije, 
+i brojni drugi(php ili neke formate izvedene
+iz njega)
+Zašto se još drži?
+Ima veliki comunnity sustav, jednostavan je za
+početnike, ima neprekidnu nadogradnju, ima 
+kompatibilnost(podržava i starije verzije)
+Trenutna verzija je 8.4 (21.11.2024)
+Support verzije traju otprilike 2 godine
+a security još više
+PHP SINTAKSA
+Interpreter izvršavakod unutar svojih markera
+<?php ?>
+Svrha je da se označi koji se točno dio koda odnosi 
+na ostali kod tipa javascript ili html
+Sve varijable koje se definiraju u php-u imaju
+simbol $ tip nije unaprijed određen,
+u php-u ne postoji eksplicitni tip podataka kao u 
+c-u ili C# gdje će nešto biti char, nešto int, 
+nešto string itd. Što god se da, on će to primiti
+U sebi posjeduje brojne metode kojima se može
+provjeravati dali je u određenoj varijabli
+točno spremljen određeni tip podatka.
+php izrazi - jedan od osnovnih pojmova svakog
+programskog jezika, a i php-a.
+Nešto što vidimo, što možemo napisati.
+Može se računati, može dati rezultat, može
+dati nekakvu aktivnost, nekakvu strukturu koda, 
+izvršiti
+Izrazi su u php-u u kombinaciji sa operatorima, 
+operandima, varijablama, sve što na kraju ima nekakvu 
+vrijednost, i što se može odbiti kao rezultat.
+U www mapi treba kreirati folder osnove_php,
+kopirati skripte iz osnova_html(linkovi.html,
+liste.html,zadaca.html,vjezba.html) preimenovati 
+u .php
+Preimenovanje u vscode-u - doći do datoteke,
+stisnuti F2 preimenujemo datoteku u php
+kada odemo na localhost
+kliknemo na datoteku
+otvori se
+php datoteke ne možemo otvarati lokalno
+poput html-a, možemo samo pomoću servera
+jer je potreban php interpreter
+u browseru prikaže samo kod,ne prikazuje
+stranicu(razlika između html-a i php-a)
+možemo pisati čitav html kod u php-u ali se 
+može izvršiti samo pomoću servera.
+Napraviti novi file izrazi.php
+<?php 
+$ime="Pero";    $-varijabla
+echo $ime;
+$broj=10;
+echo "Broj:$broj"; //ispis u istom redu
+                   //nismo napisali <br>
+                   //prepoznaje html kod (može koristiti sintaksu html-a) kada prikazuje na browseru, interpretira html kod
+                   //ako to interpretira kao html, mi nigdje nismo rekli da želimo broj staviti u novi red.
+echo "<br>Broj:$broj";
+$oznaka=2;
+$rezultat=$broj*$oznaka;
+echo "<h2>Rezultat je $rezultat</h2>";
+postoje i drugi načini ispisa
+print,die,printf itd.
+print radi isto što i echo 
+print "<h3>Pozdrav svima</h3>";
+printf se koristi za promatranje teksta, 
+slično kao u -u, koristi iste specifikatore
+tipa $s,$d,$f
+Ako imamo ime Pero, Broj je 10, želimo ispisati preko printf-a
+printf("Ime je: %s, Godine: %d");
+s-označava string, d-(ili i)
+%-cijeli broj 
+f-pomični decimalni,
+b - binarni, oktalni itd
+printf("Ime je: %s, Oznaka %d");
+die - ispis sa dijagnostičkim porukama,
+koristi se recimo za spajanje na bazu podataka
+pa ako veza pukne, nemamo što raditi
+primjer ispisa sa izlazom
+die("Dogodila se greška!");
+obično se ispiše error sve poslije die, 
+ako ima koda, taj kod se ne ispisuje u 
+stranici

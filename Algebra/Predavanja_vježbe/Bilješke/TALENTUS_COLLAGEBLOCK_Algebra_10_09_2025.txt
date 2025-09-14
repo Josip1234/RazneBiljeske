@@ -368,4 +368,126 @@ kada budemo htjeli ispisati x1 on će iznositi tek
 sada 6
 echo '<br>Varijabla $x1 iznosi:'.$x1;
 prvo ispiše vrijednost, pa uveća za 1
+echo '<br>Varijabla $x1++ iznosi:'.$x1++;
+(ispisati će 6 i u idućoj iteraciji će povećati za 1
+i ispisati 7) ipripremiti za 8
+echo '<br>Varijabla $x1++ iznosi:'.$x1++;
+echo "<p>Operator ++var</p>";
+prvo uveća vrijednost pa je ispiše
+$x2=20;
+echo '<br>Varijabla $x2 iznosi:'.$x2;
+echo '<br>Varijabla ++$x2 iznosi:'.++$x2;
+prvo uvećaj, pa prikaži uvećano
+echo '<br>Varijabla ++$x2 iznosi:'.++$x2;
+(tri puta ponovi do 25 ispisa)
+echo "<p>Operator var--</p>";
+$x3=30;
+echo '<br>Varijabla $x3 iznosi:'.$x3;
+echo '<br>Varijabla $x3-- iznosi:'.$x3--;
+(30,30)
+echo '<br>Varijabla $x3-- iznosi:'.$x3--;
+Još jednom ponovi
+echo "<p>Operator --var </p>";
+prvo umanji vrijednost, pa ispiše vrijednost
+$x4=40;
+echo '<br>Varijabla $x4 iznosi:'.$x4;
+echo '<br>Varijabla --$x4 iznosi:'.--$x4;
+(40,39) prvo umanji, pa prikaže
+(ispiši još dva zadnja) do 37
+KOMBINIRANI OPERATOR DODJELE
+skraćeni način pridodavanja neke vrijednosti 
+aritmetičkom operacijom ili operatorom . za spajanje 
+stringom
+$a=10;
+$b=15;
+$a=$a+$b;
+echo "<br>a iznosi:".$a;
+$a+=$b;//identično $a=$a+$b;
+echo "<br>a iznosi:".$a;
+$c=20;
+$d=40;
+$c*=$d;
+echo $c;
+/*kombinacija i sa -,/,%,. itd.*/
+LOGIČKI OPERATORI
+postoji najjednostavniji operator ; daju vrijednost true ili false,
+ovisno o uvjetu koji smo mi napravili
+OPERATOR AND &&
+/*
+0-laž(false)
+1-istina(true)
+
+            ulaz1   ulaz2  rezultat
+              1       1       1
+	      1       0       0
+              0       1       0
+              0       0       0
+*/
+true kada su svi ulazi true
+$br1=10;
+$br2=5;
+$rez=$br1>4;
+echo "<br>Rezultat:".$rez;
+kako znamo da je true?
+var_dump - php funkcija koja ispisuje detaljnu informaciju 
+o varijabli koji je tip podatka ako je string
+koja je vrijednost stringa kolika je duljina i za niz i za objekt
+sve elemente i njegovu strukturu
+echo "<br>Tip:";
+var_dump($rez);
+tip je boolean true
+var_dump($d);
+int(40)
+$grad="Zagreb";
+var_dump($grad);
+string(6)"Zagreb"
+$rez=$br1<3;
+echo "<br>Rezultat:".$rez; echo "<br>Tip:"; var_dump($rez);
+sad rezultat nije false false kao i null ništa ne predstavlja
+i ne troši resurse da bi željeli prezentirati 0 kao false 
+trebamo castati vrijednost i prije ispisa ubacimo int
+echo "<br>Rezultat:".(int)$rez;
+(pretvori taj izrazu integer budući da se radi o false 0) 
+prva vrijednost koju će pretvoriti biti će nula
+rezultat je 0
+ovaj izraz smo pretvorili u integer
+$rez=($br1>4 && $br2>4);
+echo "<br>Rezultat:".(int)$rez; echo "<br>Tip:"; var_dump($rez);
+false
+//dali su oba broja parna
+//broj je paran kad je djeljiv sa 2 odnosno 
+//kad mu je ostatak 0
+$rez=($broj1%2==0&&$broj2%2==0);
+kopirati rezultat tip 
+false deset je djeljiv 5 nije
+razlika između = i ==
+znak = je znak dodjele
+== - pita dali je nešto jednako nečemu
+OPERATOR OR
+/*
+0-laž(false)
+1-istina(true)
+
+                    ulaz1     ulaz2      rezultat
+                      1         1           1
+		      1         0	    1
+		      0         1           1
+                      0         0           0
+*/
+za istinu je dovoljan samo 1 ulaz da bi bilo istina, lažan je ako su samo oba lažna
+$br1=10;
+$br2=18;
+$rez=($br1>4 || $br2>4);
+echo "<br>Rezultat:".(int)$rez; echo "<br>Tip:"; var_dump($rez);
+kombinacija tipki altgr+w se dobije simbol ||
+res:true
+$rez=($br1>2||$br2<5);
+echo "<br>Rezultat:".(int)$rez; echo "<br>Tip:"; var_dump($rez);
+rezultat je false
+probati sa random
+$br1=rand(10,20);
+$br2=rand(10,20);
+echo "<br> Brojevi su".$br1." i ".$br2;
+rezultat je true
+dali je jedan paran 
 

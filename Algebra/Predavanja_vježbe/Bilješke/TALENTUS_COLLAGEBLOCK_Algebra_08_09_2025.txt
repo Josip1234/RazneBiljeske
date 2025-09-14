@@ -112,3 +112,227 @@ potrebno je dopuštenje za otvaranje
 za html nisu potrebni nikakvi serveri
 njega doslovno možemo otvoriti i pisati kod  notepadu(običnom)
 spremiti na lokalno mjesto, pokrenuti  
+i to je to
+html bez mysql-a i php-a se koristi samo za statičke stranice
+pokreće se dvoklikom, putem servera za razliku od php-a, html se može pokrenuti na dva načina
+XAMPP INSTALACIJA
+uac message -(warning)
+important! ... klik na ok
+setup wizard
+next>sve po defaultu poklikati, next>c://xampp,
+next>language (odabir) next>next>pričekati par sekundi do minute (na kraju može pitati
+za windows security da doda kontrole kliknuti yes>do you want to start control panel? yes) finish
+xampp - jedno od okruženja koje ćemo koristiti xampp je jedan instalacijski paket
+koji daje podršku za kompletan php, mysql i apache u sebi sadrži sve komponente 
+i automatski sve podesi tako da nam je sve spremno za rad kad se instalira, i ako želimo, 
+to možemo sami podešavati.
+Problem detected! port 8080 already in use
+neka druga aplikacija koristi ovaj port
+možemo startati apache
+naći će neki drugi put
+za početak je bitno startati apache modul 
+postoji mysql modul koji će nam trebati za baze podataka, sada nam ne treba
+Ako smo dobili zeleni background, apache je pokrenut
+Kako pristupiti stranici da vidimo dali je instalirano
+c://xampp//htdocs -defaultna putanja gdje on stavlja sve svoje projekte, filove, inicijalizacije
+kada pokrenemo 
+utipkamo localhost
+dobijemo localhost//dashboard/
+instalacija uspješna!
+onfiguracija se nalazi u index.php u htdocs folderu
+ako otvorimo, php kod kaže ako je sve prošlo u redu, i ako osluškuje port, 
+header location url dashboard
+preusmjeri ga na dashboard
+možemo to promijeniti
+na xampp kontrolnom panelu, odemo na config, otvorimo apache(httpd.conf)
+pronađemo document root
+kaže nam defaultnu putanju gdje document root ide
+ne želimo primjerice da ide na htdocs, već na www
+promijenimo document root i directory
+spremimo
+ugasimo
+restartirati apache
+stop/start
+(ukoliko se javi greška, otvoriti access.log datoteku, otvoriti ponovno httpd.conf,
+provjeriti document root ponovno 
+ako utvrdimo da je okpokušati ponovno pokrenuti)
+otvoriti ponovno apache httpd.conf
+vratiti htdocs umjesto www pokrenuti
+ponovno ako radi (nije poznato što ga muči)(nešto blokira, neki alat)
+ne postoji folder www!
+napraviti folder u xampp folderu
+nazvati www
+promijeniti natrag u www httpd.conf
+pokrenuti ponovno
+kad odemo na localhost, više nas ne šalje na dashboard, trenutni defaultni folder je www u njemu će se
+nalaziti sve root datoteke koje ćemo stavljati
+instalirati vscode
+pokrenuti 
+kreiramo novi folder
+osnove_html
+open folder
+otvoriti osnove_html  vscode-u
+kreirati file osnove.html
+kreirajmo osnovnu html strukturu 
+<!DOCTYPE html>
+<html>
+(automatsko zatvaranje tagova)
+<head>
+<title>Osnove HTML - struktura</title>
+</head>
+<body>
+</body>
+</html>
+unutar head-a, metatag iznad title
+<meta charset="UTF-8"> - za prepoznavanje specijalnih znakova, primjerice č i ć u hrvatskom jeziku
+koristeći dev tools, F12 dobijemo konzolu, možemo vidjeti elemente
+vidimo i neki style koji je chrome dodao 
+font od preglednika
+može se gledati i preko mobilnog uređaja (toogle device toolbar)
+služi developerima pri razvoju
+dodajmo još jedan metatag u head
+<meta name="viewport" content="width-device-width, initial-scale-1.0"> (između mete i title-a)
+služi da nam stranica bude responzivna
+dodati još jedan metatag 
+<meta http-equiv="X-UA-Compatible" content="ie-edge"> (između viewporta i title-a)
+kompatibilnost stranice za starije verzije softvera 
+2022 edge chromium forsira da se stranica prikaže upravo u tom pregledniku a da ne ide 
+na internet explorer gdje se sadržaj neće ispravno prikazati
+dodati h1 u body
+Ovo je glavni naslov
+ako odemo u browser 
+vidimo promjene
+dodati h2 ispod h1
+Ovoje podnaslov
+dodati paragraf 
+Ovo je paragraf
+U dev toolsu kad kliknemo jednu od oznaka, pokazuje nam na koju se oznaku odnosi
+desna tipka - inspect(provjeri)
+provjeravamo element na koji smo kliknuli automatski nas odvede na liniju koda 
+na kojoj se taj element nalazi, tj on je prikazan (korisno za velike stranice kod traženja i ispravljanja grešaka)
+dodati tekst lorem ipsum
+lipsum.com
+uzeti drugi odlomak od lijeve strane
+staviti pod paragraf
+kada se dogodi da tekst ode skroz desno uvscode-u, idemo na view word wrap
+automatski prikaže na rezoluciju ekrana da ne ide skroz sadržaj desno da ne moramo scrollati
+pregledamo kako izgleda 
+oblikovanje teksta možemo putem css-a
+js daje interaktivnost stranici
+pogledati skriptu sa vježbe
+align="justify" - poravnanje (centriranje) teksta sa obje strane
+margin-left - pomakni tekst udesno
+margin-right - pomakni ulijevo
+<br> - prijenos u drugi red
+kreiranje internog css file-a
+definiramo sa style <style></style> tagom u headeru (head oznaka)
+implicitno označavanje - p - odnosi se na sve paragrafe koje ćemo tu imati
+komentari u css-u /*... */
+komentari u html-u <!--...-->
+da ne idemo stalno u kod, da naštimavamo kako bi pasao prored, pa malo više, pa malo manje
+možemo testirati u pregledniku
+desna tipka inspect
+prozor styles
+user_agent stylesheet - css od preglednika
+osnove_html - naš css
+recimo line height izgleda prevelik, kliknemo na line height
+promijenimo umjesto 30 na 29,28,27... vidimo kako se mijenja 
+sadržaj automatski  možemo sebi vidjeti
+evo ok 23 mi je super ok međutim 23 to nije u kodu, služi nam
+da ne idemo stalno u kod(heksadecimalni naziv boje, naziv boje)
+u kodu je original, ako refreshamo vrati se u izvorni oblik, jer promjena 
+nije spremljena interno
+da bi spremili interno, kopiramo promjenu u css umjesto recimo red, 
+stavimo boju koju smo testirali, spremimo promjene, prikažemo u browseru
+tablice - struktuirani prikaz podataka u redovima, stupcima
+tablica se sastoji od zaglavlja, sadržaja i podnožja
+<tr></tr> - kreiramo red tablice
+<td></td> - kreiramo elemente podataka u tablici
+<th></th> - kreiramo opis što će se nalaziti u tablici(npr. redni broj, ime i prezime)
+<tr>               <tr>
+   <th></th>          <td></td>  
+</tr>              </tr>
+<table border="1"> - razdjelnici, baš da se prikaže tablica kao tablica u browseru
+ako imamo stupac ili redak koji nam ne treba koristimo colspan ili rowspan
+primjer
+<tr>
+<td><td>
+<td>Ukupno<td>
+<td>11600<td>
+<tr>
+višak stupaca 
+izbrišemo td koji nam ne treba 
+stavimo kod ukupno colspan="2" (ćelija zauzima dvije kolone)
+<tr>
+<td colspan="2">Ukupno</td>
+<td>11600</td>
+</tr>
+https://www.w3schools.com/html
+liste - služe za nabrajanja nekakvih podataka, sljedova, sređene i nesređene liste
+sređene ili ordered list
+<ol>
+<li>VSCODE</li>
+<ol>
+# - sharp
+c# - sharp
+sređene liste su numerirane s brojevima
+nesređene ili unordered liste
+<ul>
+   <li>VSCODE</li>
+</ul>
+definicijske liste - dl
+<dl> - glavni kontejner za listu
+<dt> - definition term - definira se unutar liste, pojam
+<dd> - opis
+<dl>
+   <dt>Kava</dt>
+   <dd>Omiljeni napitak</dd>
+</dl>
+linkovi - poveznice
+elementi koje nas vode na sadržaje drugih datoteka,
+html datoteka ili drugih web stranica
+interne poveznice, vanjske poveznice, otvaranje u novom prozoru itd.
+INTERNA POVEZNICA
+<a href="liste.html">liste</a>
+VANJSKA POVEZNICA
+<a href="https://w3schools.com/" target="_blank">W3schools</a>
+_blank - otvaranje u novom tabu
+title property - moguće je prikazati trenutno tekst kada dođemo mišem na hover
+title="stranica za učenje"
+slika umjesto teksta
+<a href="tablice.html"><img src="smiley.png" width="64px" height="64px"></a>
+dz. u nesređenu listu staviti linkove
+definiranje linkova omogućuje da možemo skočiti na četvrti odlomak unutar nekog file-a
+trebamo napraviti identifikator na odlomku
+<a href="osnove.html#cetvrti">osnove</a>
+kliknemo ode na četvrti odlomak 
+<p id="cetvrti">...</p>
+obrasci - posebna kategorija html-a koji nam omogućuju da neke podatke koje punimo, 
+želimo prikazati, obraditi možemo unjeti preko nekakvog sučelja to je više onako za korisnika
+koji želi unositi neke podatke 
+obrazac nema smisla ako podatke nigdje ne spremamo
+<form>
+<input type="text" name="imeprezime">
+<selct name="grad">
+       <option value="zg">Zagreb</a>
+</select>
+<input type="radio" name="spol" value="m">
+u input text možemo dodati value i vrijednost koju želimo da nam na početku
+stoji ako je upisano automatski prepoznaje value
+ako u selectu stavimo opciju selected na jednu od opcija, ta će vrijednost po 
+defaultu biti odabrana. Kod radio buttona, ako stavimo checked ta će vrijednost 
+biti odabrana 
+kad budemo radili ažuriranje podataka, u php-u, želimo ga ažurirati i kada
+neku osobu želimo ažurirati, otvori vam se obrazac za ažuriranje, moramo dobiti 
+podatke od te osobe, mora biti prikazano u izborniku da je ona ne da se resetira, 
+jer to nema smisla, ne znamo koja je to vrijednost bila, ideja je kad ažuriramo podatke,
+da nam se to automatski vrati.
+<input type="checkbox" name="sportovi" value="nog">Nogomet
+checked da bude po defaultu odabran
+<textarea name="opis" rows="8"cols="11">(16 stavi)
+<input type="submit" value="Posalji">
+</form>
+Ako stisnemo pošalji, u address baru u pregledniku, pojaviti će se varijable
+kao da smo po defaultu koristili get metodu a nismo rekli kamo da pošaljemo podatke
+<input type="date" name="datumrodjenja">
+(automatski date picker)

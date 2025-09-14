@@ -136,3 +136,158 @@ die("Dogodila se greška!");
 obično se ispiše error sve poslije die, 
 ako ima koda, taj kod se ne ispisuje u 
 stranici
+debugger kae unreachable code
+zna da ga program neće izvršiti
+exit(); ista stvar
+//-komentar u jednoj liniji
+?>
+VARIJABLE
+su veličine koje tijekom izvršavanja mogu mijenjati svoju vrijednost, 
+zovemo ih na neki način spremnicima podataka
+privremeno čuvaju neki podatak kod sebe
+pravila pisanja varijabli: 
+-moraju početi znakom dolar $
+-iza dolara mora početi slovom ili znakom _
+-varijabla ne može početi brojem, ali ga
+može sadržavati
+-php razlikuje velika i mala slova
+-ime varijable mora biti definirano u skladu
+sa značenjem vrijednosti koja se pamti u okviru 
+varijable
+-varijabli se dodjeljuje vrijednost omoću operatora =
+napraviti novu datoteku 
+varijable.php
+<?php 
+echo "<h1>varijable u php-u</h1>";
+echo "<h2>pravila pisanja varijabli</h2>";
+$ime="Pero"; //-jedna linija, objašnjenja ili isključivanje dijela koda
+echo "Ime:$ime";
+$grad="Zagreb";
+/*...*/  - komentari u više linija
+echo "<p>Osoba $ime oli grad $grad</p>";
+(možemo koristiti i print)
+echo '<p>Osoba $ime voli grad $grad</p>";
+ispis - soba ime voli $grad
+koja je razlika između jednostrukih i dvostrukih navodnika?
+kad koristimo jedne, kad druge?
+Što se tiče statičkog teksta, kada se radi o 
+varijablama, jednostruki navodnik ispisuje ime,
+tj. naziv varijable dok dvostruki navodnik ispisuje 
+vrijednosti varijable (ključna razlika između jednostrukih i dvostrukih navodnika) 
+kada se radi o ispisima
+echo '<p> Vrijednost varijable $ime je';
+echo "$ime</p>";
+$_grad= - druga varijabla
+$Grad= - druga varijabla
+$Grad="Split";
+echo "<br>Gradovi:$grad i $Grad";
+$broj=10; //varijabli smo dodjelili integer
+$brojka="100"; //varijabli smo dodjelili string
+$zbroj = $brojka + $broj;
+echo "<br>Zbroj je:$zbroj";
+Zašto je zbrojio ta dva broja?PHP-u 
+ne smeta za izvođenje računskih operacija 
+aritmetičkih što je broj definiran kao 
+string onaj gore kao integer u javascriptu to smeta,
+ako u js-u nisu strogi integeri, on će jednostavno njima
+pripojiti, rezultat bi bio 10100
+$placa=5285.32; (decimalni broj se definira sa točkom)
+echo "<br>Plaća:".$placa;
+Inače, preporuka je da se varijable uvijek definiraju 
+sa engleskom abecedom da se ne koriste hrvatski znakovi
+nikad ne znamo gdje se u nekom trenutku može stvoriti problem, 
+obično to se desi kad se negdje hosta kog hostinga koji 
+ne podržava te znakove, stoga se 
+preporučuje korištenje engleskog alfabeta
+ovo su globalne varijable
+varijabla - sadrži neki podatak koji se 
+može mijenjati koji kroz skriptu može i 
+zadržavati vrijednost itd.
+osim varijabli, imamo i konstante
+to su vrijednosti oje definiramo u 
+php-u koje ne mijenjaju vrijednost
+echo "<h2>Konstante</h2>";
+echo PHP_VERSION;//verzija php-a
+echo "<br>OS:";
+echo PHP_OS; //vrsta operacijskog sustava
+echo ___FILE___; //putanja do datoteke
+echo "<br>";
+echo ___DIR___; //naziv direktorija
+tijekom izvođenja programa konstante se mijenjaju
+to su bile predefinirane konstante.
+PISANJE VLASTITIH
+definira se pomoću izraza define i obično
+se definiraju velikim slovima
+može i malim ali nije preporučljivo
+define("PI",3.14);
+echo "<br>PI iznosi";echo PI;
+možemo ih koristiti kada želimo neke 
+vrijednosti da su fiksne primjerice 
+spajanje na bazu
+define("BAZAX","knjiznica");
+define("USER", "phpuser");
+define("PASS", "12345");
+define("SERVER", "localhost");
+svaku od njih možemo i ispisati
+echo "<h2>Predefinirane varijable</h2>";
+varijable koji php sustav podiže sam po sebi, 
+kada se upali, neke od njih možemo sami 
+koristiti (get, post, request, server, request uri)
+$ime_servera=$_SERVER["SERVER_NAME"];
+echo "<br>Ime servera:".$ime_servera;
+localhost
+može se promijeniti
+c://windows/system32/drivers/etc/hosts
+definiramo novi host, možemo reći kako nam se to može zvati
+127.0.0.1 algebra_server
+127.0.0.1 ucka.valeri.hr
+spremimo promjene
+trebamo je otvoriti administratorski
+umjesto localhost upisati algebra_server
+nakon toga restart apache servera
+ne zaboraviti http://algebra_server
+možda fali override all u apache httpd.conf
+$metoda = $_SERVER['REQUEST_METHOD'];
+echo "<br>Metoda:".$metoda;
+popis metoda:
+https://www.tutorialspoint.com/php/php_predefined_variables.htm
+echo "<br>Doc root:"; echo $_SERVER['DOCUMENT_ROOT'];
+TIPOVI PODATAKA
+Ne postoji fiksni tipovi ne moram definirati i tipove varijable
+možemo ih deklarirati unutar skripte bilo kad i pregaziti  
+mijenjati tip varijable , mijenjati podatke jednog te istog sadržaja.
+(integer, floating-point,string,logičke varijable, nizovi, objekti)
+null - varijable kojima nije dodjeljena vrijednost imaju vrijednost 
+null nepostojeća vrijednost,polje bez vrijednosti 
+0 je isto vrijednost, ali nije null
+U integer se mogu dodjeliti pozitivni i negativni brojevi
+Možemo ih zapisati u dekadskom, oktalnom, li heksadecimalnom sustavu
+Floating brojevi - brojevi sa pomičnom točkom
+IEEE-64	bitni format 14 decimala
+točnost nije garantirana
+nije ih dobro uspoređivati jer ovise o broju decimala
+string - tekstualni tipovi podataka
+mogu se specificirati korištenjem jednog ili dva seta
+delimitera, definiraju se između navodnika, možemo koristiti 
+jednostruke i dvostruke navodnike.trebamo pripaziti kada 
+ispisujemo varijable.
+Jednostruki navodnici se mogu koristiti u dvostrukim,
+i obrnuto, međutim nikad jedni unutar rugih (isti unutar istih)
+moramo onda raditi escape stringa "\\","\";
+varijable unutar jednostrukih se neće koristiti kao varijable, već kao
+najobičnij niz znakova.
+napraviti novi file
+navodnici.php
+<?php 
+  echo "<p><a href='varijable.php'>Varijable</a></p>";
+  echo "<p><a href=\"varijable.php\">Varijable</a></p>";
+  echo '<p><a href=\'varijable.php\'>Varijable</a></p>';
+  echo '<p><a href="varijable.php">Varijable</a></p>';
+?>
+OPERATORI
+novi file operatori.php
+html struktura
+<?php 
+echo "<h1>Operatori u php-u</h1>";
+omogućuju izvršavanje operacija nad zbrajanjem, oduzimanjem itd.
+unarni, binarni, ternarni operatori

@@ -490,4 +490,40 @@ $br2=rand(10,20);
 echo "<br> Brojevi su".$br1." i ".$br2;
 rezultat je true
 dali je jedan paran 
-
+OPERATOR NOT
+negira istinu i laž, ako je vrijednost 0
+pretvori u jedan, 1 pretvori u 0
+OPERATOR USKLIČNIKA
+/*
+!0=istina(true)
+!1-laž(false)
+*/
+echo '<br>Varijable $drzava je postavljena:';
+echo var_dump(isset($država));
+isset je funkcija koja provjera dali je nešto postavljeno ili ne
+false - rekli smo neistinu
+nije postavljana + (!isset($drzava))
+                 + (isset($rez)) (probati i negirati)
+                 + (!isset($rez))
+$indikator=true;
+echo "<br>Not indikator:".var_dump(!$indikator);
+nećemo kod više pisati, 
+pogledati vježbe!
+samo teoriju i objašnjenja
+OPERATORI USPOREDBE
+uspoređuju dvije ili više vrijednosti i vraćaju određeni rezultat
+>-dali je prva vrijednost veća od druge true ako je veća
+<-dali je prva vrijednost manja od druge true ako je manja
+>=-dali je prva vrijednost veća ili jednaka drugoj true ako je
+<=-dali je prva vrijednost manja ili jednaka drugoj onda je true
+== - ako su brojevi jednaki onda je true
+!= - dali je broj 1 jednak broju dva i dalji je broj 1 različit od broja 2
+znak nejednakosti
+operator identičnosti ima trostruki znak jednakosti ===
+neidentičnosti dva znaka nejednakosti 
+!==
+razlika? Operator jednakosti provjerava dali dvije varijable imaju
+istu vrijednost, dok operator identičnosti provjerava dali su te 
+dvije varijable isti tip i ista vrijednost
+Ako želimo da string broj i int broj budu identični trebamo napraviti cast
+i pretvoriti u string

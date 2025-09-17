@@ -1,0 +1,51 @@
+                                                          TIP PODATAKA DATUM (DATE)
+(koristiti ćemo ga dalje i trebati će nam kasnije). Što je php date?
+Gotova funkcija (metoda u php-u) koja nam vraća atum i željeno vrijeme
+u željenom formatu. On se obično poziva na trenutni datum i vrijeme
+koji učitava sa sustava, i uzima baš to trenutno vrijeme koje mu je
+dostupno, koje server definira. Ako se timestamp ne navede, on se 
+koristi trenutnim vremenom.Datum koristi sljedeće simbole:
+
+Y-godina, y-godina, m-mjesec, n-mjesec bez 0, d-dan u mjesecu,
+(4 znam)  (2 znam)  (01-12)   (1-12)          (01-31)
+
+j - dan bez nule, H-sati, i-minute, s-sekunde
+(1-31)            (00-23) (00-59)   (00-59)
+
+POGLEDATI KOD SA PREDAVANJA POD DATUM
+datumi.php
+Format datuma: d.m.Y (15.09.2025)
+               Y-m-d (2025-09-15)
+Datum koji je potreban mysql bazi podataka tj tablici prilikom unosa.
+Znači, kada mi budemo radili, koristiti ćemo dosta kad budemo upisivali
+datum u ovom formatu, trebati ćemo ga pretvoriti u taj format. Inače se on
+neće ispravno spremiti. Dan, mjesec i godinu možemo pisati i zasebno.
+Konverzija datuma - 
+Imamo neki fiksni datum 01.05.2024. Prilikom ispisa možemo koristiti
+php funkciju za konverziju, primjerice želimo ga konvertirati za sql.
+(ne moramo samo tijekom ispisa, možemo i prije).
+date("Y-m-d", strtotime($praznikrada));
+"Y-m-d" - koji format želimo prikazati
+strtotime($praznikrada) - pretvrara (priprema) naš definirani datum u
+dani format.
+w3schools.com/php/func_date_date.asp gdje možemo naći popis/definicije
+svih formata datuma. Slično i za vrijeme, svaku komponentu možemo zasebno
+napisati. Strtotime (string to time) - pripremi datum za format, ona ga
+pretvori u sekunde, počevši od datuma 1.1.1900 do danas. U tom trenutku,
+on izbroji (broj sekundi koji je prošao od 1.1.1900 godine)
+Datum i vrijeme možemo zajedno ispisati kao timestamp. Timestamp je 
+instanca koja se često koristi u sql-u. Bitno je imati datum radi
+nekakvih statistika, kad si zadnji put uzeo neki podatak i slično.
+Za sql bi trebali promijeniti format datuma. Primjer 24.07.2023 15:32:45
+kao datum unosa. date("Y-m-d H:i:s", strtotime($unos);
+                      Obavezno navesti, inače će prikazati samo datum
+Sada datum možemo unjeti u tablicu baze podataka.
+Možemo računati i razliku. Primjer. $razlika=strtotime($datum2)-strtotime($datum1);
+Rezultat razlike je uvijek u sekundama. (120 sekundi)
+Ako želimo pretvoriti u minute, podjelimo sa 60 da dobijemo rezultat u minutama.
+date("l") - dobijemo naziv današnjeg dana. Možemo dodavati i oduzimati mjesece, dane 
+i godine. date("d.m.Y",strtotime("+1 month", date("d.m.Y"));
+Zaboravili smo dodati strtotime kod date. Php nam je javio grešku. Možemo dodati 
+i dan sve isto zamijenimo month sa day. Možemo ih i oduzimati. Možemo dodati 
+i za više mjeseci primjerice +2. Ako je jedan mjesec ide month, za više ide months
+(day days, year years) 

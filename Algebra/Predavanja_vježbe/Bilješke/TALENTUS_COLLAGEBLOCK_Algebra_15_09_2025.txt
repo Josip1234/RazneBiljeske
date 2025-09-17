@@ -49,3 +49,160 @@ Zaboravili smo dodati strtotime kod date. Php nam je javio grešku. Možemo doda
 i dan sve isto zamijenimo month sa day. Možemo ih i oduzimati. Možemo dodati 
 i za više mjeseci primjerice +2. Ako je jedan mjesec ide month, za više ide months
 (day days, year years) 
+                                                             
+                                                                KONTROLNE STRUKTURE
+To su strukture koje određuju tok izvršavanja programa. Ponašaju se poput znakova za
+preusmjeravanje prometa. Postoje različite kontrolne strukture. Možemo ih kategorizirati:
+uvjetne strukture, petlje. Uvjeti nam omogućavaju da odaberemo hoće li se nešto izvršiti 
+ili ne. Neku izjavu ispisati a petlja nam izvršava onoliko puta koliko nam je potrebno.
+Uvjetne nam omogućuju samo jedanput hoćemo li izvršiti ili ne,petlje pomažu da izvršimo 
+izjavu onoliko puta koliko nam je zaista to potrebno.
+                                                                UVJETOVANE
+If, switch case
+if se može granati u if else, ifelseif switch case se sastoji od switch struktura 
+se sastoji od case-ova(slučajeva) i ispitujemo nekakve vrijednosti.
+                                                                IF
+Jednostavan. Osnovna uvjetna naredba. Izvršava blok koda samo ako je uvjet točan.
+Dva načina: prvi ako je uvjet istinit
+if(uvjet istinit)
+      true;
+else 
+      false;
+if može postojati i bez else-a.Ovo je način kada radimo sa if-om bez vitičastih zagrada.
+Poanta je u tome što se izvršava samo linija koda koja se nalazi iza if-a, dok ostale
+ne ovise o if-u. Drugi način: korištenje vitičastih zagrada. Kada želimo blok koda izvršiti
+koji se nalazi u vitičastim zagradama inače ako uvijet nije istinit izvršava se false
+if(uvjet istinit){
+     true;
+}
+else{
+     false;
+}
+Precrtati crtež iz bilješki kad se bude radilo u word dokumentu.
+Ako je uvjet istinit, izvršava se kod, ako nije može se izići iz programa, itd.
+novi file kontrola_if.php primjeri zadataka (samo tekst) (riješenja već u kodu)
+nadopuniti kod bez vitičastih (ili ne, pogledati kod od nastavnika najbolje)
+kada ne koristimo vitičaste zagrade, samo prva linija zavisi od if-a.Ako napišemo
+ispis nakon prve linije ispisati će se jer ne zavisi od if-a.
+Primjeri redom: 
+Osoba 1 ima 18 godina, a osoba 2 20. Ako su obje punoljetne, mogu ući u klub,
+inače ne.
+Kupiti automobil ako ima više od 150 ks-a ili je prešao ispod 20000 km.
+Ukoliko je ime osobe identično Andrea i godine su jednake 30, ispisati:
+Osoba primljena Godište:zadovoljavajuće Inače ispisati osoba nije primljena,
+Godine: premalo. Kada koristimo elseif? Kada ispitujemo više od dva uvjeta,
+kada rezultat/ishod može poprimiti više vrijednosti (tri ishoda, elseif)
+Primjer:
+Zadan je neki broj u rasponu od 8 do 13 Ispitati sljedeće: -Ukoliko je broj
+veći od 10, ispisati: Veći od deset. -Ukoliko je broj manji od 10, ispisati: 
+manji od 10. -ukoliko ni jedan od prethodna dva uvjeta nije istinit, ispisati
+Jednak 10.
+                                                   TERNARNI OPERATOR - RADI SLIČNO KAO IF ELSE
+Primjer. Zadan je neki broj. Provjeriti dali je broj paran. Ako da, ispisati paran. Inače ispisati neparan.
+($brojka%2==0)?"Paran":"Neparan";
+? - predstavlja if, nakon upitnika se izvršava istinit uvjet 
+: - predstavlja else, nakon else-a se izvršava neistinit uvjet
+kao jednostavna verzija if else-a koji nam skraćuje broj linija koda. Umjesto 5,6 linija koda sve u jednoj liniji.
+primjer. ispišite današnji dan na hrvatskom jeziku koristeći if else if else strukturu
+imamo 7 ishoda, od monday do sunday. koliko ćemo imati if-ova? 1 if, 5 else if-ova i 1 else.
+7 ishoda, elseifova uvijek -2, znači 5. Prvi ishod zauzima if, zadnji ishod else. Sve ostalo else if.
+Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. Sutra, tj. danas će biti Utorak.
+                                                    SWITCH
+Kontrola koja nam omogućava da ispitamo više mogućih vrijednosti neke varijable puno je čitljivija 
+i preglednija nego pisati puno if else-a može ispitivati i integer i string.
+Primjer. Zadana je šifra boje od 1 do 3 1-Crvena,2-plava,3-zelena. Potrebno je ispitati vrijednost boje
+te za dobivenu boju ispisati sljedeće: Odabrana je crvena boja! npr za 1.
+switch($boja){
+            case 1:
+                 echo ...
+            break;
+Zašto break? Zato što u slučaju da se nađe slučaj da se nađe njegova vrijednost onda se sa break-om izlazi
+iz ove strukture i ne ide se dalje u izvršavanje. 
+            case 2:
+                 echo ...
+            break;
+            case 3:
+                 echo ...
+            break;
+Što da nema te vrijednosti? Nema ništa jer nije definirana u case-vima. Sve je dobro dok imamo onoliko ishoda
+koliko vrijednost može pamtiti. Kad smo ih sve definirali. Možemo dodati case 4, no što ako imamo 1-50 a trebamo
+samo 3? Svi ostali ne trebaju (Trebamo samo prva tri slučaja). S ostalim izborima se nešto treba napraviti.
+Sve što je višak ide pod default.
+            default:
+                 echo ...
+Sada se za svaki element koji nije u case-ima određuje po defaultu. Za prve tri i dalje vrijede case-evi.
+Za ostale imamo pogrešnu boju. U case-u ne mora postojati samo jedna linija, može biti i blok naredbi.
+Dodatak: definirati u css-u tri klase za tri boje pa ih primjeniti ovisno o uvjetu.
+tekst ispisati u labelama sa pripadajućom klasom.
+Dodatak 2: za slučaj 2 ispisati kvadrat boje. Kvadrat=$boja*$boja
+Pomoću switch-a pokušati dobiti današnji dan na hrvatskom jeziku.
+                                                    PHP DEBUGGER
+Debugging je postupak tijekom programiranja gdje možete pratiti korak po korak odnosno liniju po liniju
+koda kako se izvršava i gledati što i u kojem trenutku se što inicijalizira. Prema uputama, potrebno je 
+instalirati debugger.Debugiranje se sastoji od toga da definiramo unutar koda tijekom izvođenja neki 
+breakpoint odnosno točku gdje želimo da nam program stane.To znači ukoliko mi ne možemo u programu
+pronaći, program se neočekivano ponaša, a mi zapravo mislimo da se treba drugačije ponašati, neku
+vrijednost pokupi za koju mi nemamo pojma u tom trenutku zašto je uopće pokupi, pa idemo korak po 
+korak vidjeti što se događa u tom trenutku. Stavimo breakpoint kod boja, idemo izvršiti program.
+Refreshamo browser, pokrenemo |> listen for debug. Refresh, vidimo da se vrti. Dobili smo sa lijeve 
+strane varijable. Vidimo gdje je program stao. Sve varijable koje su definirane u php skripti piše 
+da nisu inicijalizirane. Imamo superglobalne varijable, predefinirane (varijable koje smo ispisivali),
+imamo i konstante. Njih nemamo, pa nisu učitane. Run>start debugging>step into(kada želimo ući u 
+neku metodu),step over f10 pratimo sa lijeve strane što se događa. Boja je dobila vrijednost 5,
+ispituje case1 otišao je na default ... Možemo postavljati vrijednost varijabli kliknemo na vrijednost
+varijable u variable locals windowu promijenimo recimo iz 8 u 10 sad smo ga zavarali sada ode na else.
+Broj u ispisu je 10. Dobiti ćemo upute, dosta će nam pomoći tijekom rada.
+                                                     KONTROLNE PETLJE
+To su kontrolne strukture koje omogućavaju izvršavanje jedne izjave onoliko puta koliko mi želimo, tj.
+onoliko puta koliko nam je potrebno. Najčešće koristimo u nizovima. Postoje četiri vrste petlje: 
+while, do while, for, foreach.
+                                                     WHILE PETLJA
+Ima svoju strukturu tako da se ona izvršava sve dok je nekakav uvjet ispunjen. Može se izvršiti 
+nijednom ili minimalno jednom. Ako uvjet nije ispunjen, nećemo ući u while petlju. Ako je uvjet
+ispunjen, može se samo 1 put izvršiti. Novi file petlja_while.php Primjer: Potrebno je ispisati 
+brojeve od 1 do 10 pomoću while petlje. 
+while($broj<=10) - uvjet
+     {
+      ...
+      $broj++    - inkrementator (povećavamo za jedan da ne upadnemo u beskonačnu petlju)
+     }
+Ako je uvjet istinit, ulazimo u petlju.  Možemo vidjeti kroz debug kako funkcionira.
+Ispisati brojeve od 20 do -10. Izraz continue koristimo kada želimo u petlji nešto 
+preskočiti izvršavanje nekog dijela petlje. Ispis parnih brojeva od 1 do 20
+Ako nismo stavili inkrementator, ušli smo ubeskonačnu petlju! Break koristimo 
+kad želimo zaustaviti petlju u nekom trenutku recimo kad nam je izlistala  nešto 
+što nam je potrebno i tu je želimo zaustaviti. Primjer ispisati brojeve od -5 do 5,
+te zaustaviti izvršavanje kada vrijednost dođe do 0. Potrebno je ispisati brojeve od 
+1 do 30, te ispisati -zbroj svih parnih, -koliko ima onih koji su djeljivi sa tri.
+Ako mroamo nešto u petlji pobrojati, prije nego što krenemo to zbrajati inicijalno
+postaviti varijablu prije početka petlje, koja će biti postavljena na nulu. Zato što 
+trebamo spremati u nešto rezultat. Da nismo postavili varijablu što bi se dogodilo?
+Warning: Undefined variable $zbrojparnih in: ON LINE 60. Dobili bi zbroj, ali i 
+warning da nam ta varijabla nije postavljena zato je bolje postaviti varijablu.
+Dobro je logički davati imena varijabli poslje da znamo. Primjer. Potrebno je u 
+html tablicu ispisati prvih 10 brojeva, zatim je potrebno u drugu kolonu izračunati 
+korijen svakog broja zaokruženog na tri decimale, a u treću kolonu ispisati dali je 
+broj paran ili neparan. Parne ćelije obojati u crvenu boju, neparne u zelenu.Korijen
+se računa sqrt($brojka). round(sqrt($brojka)); Pomoću while petlje ispisati fibonnacijev
+niz ako su poznate prve dvije vrijednosti 0,1 - ispisati niz do 800. Što je fibonnacijev 
+niz? Niz koji nastaje tako što zbrajamo zadnje dvije vrijednosti u nizu koje dobivamo u
+rezultatu. 
+0,1 
+0,1,1,2,3,5,8,13,21,34,55...800
+1:iteracija:  0 i 1 =>1
+2:iteracija:  1 i 1 =>2
+3:iteracija:  1 i 2 =>3
+4:iteracija:  2 i 3 =>5
+...
+                                                         DO WHILE PETLJA
+Do while petlja će se izvršiti minimalno 1 put. 
+do{
+   ...
+}while($broj<=10);
+Petlja odmah nešto ispisuje bez da provjerava uvjet. Da stavimo uvjet koji ne zadovoljava, while petlja
+bi se svejedno izvršila. Po defaultu bi ispisala i prekinula izvršavanje. U praksi kada želimo nešto 
+raditi dok je taj primjer neispravan. (primjer korištenja u praksi). Želimo npr. unositi nekakvu lozinku.
+Primjer potrebno je unositi sve dok ne pogodimo vrijednost broja preko do while petlje. Potrebno je dobiti 
+slučajan broj između 1 i 10 ako je broj manji od 5, potrebno je ispisati sve brojeve od tog broja do 5 
+inače je potrebno vrijednost Zagreb ispisati onoliko puta kolika je vrijednost dobivenog broja
+           

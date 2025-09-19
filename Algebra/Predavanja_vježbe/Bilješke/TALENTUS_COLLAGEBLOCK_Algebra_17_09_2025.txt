@@ -88,3 +88,34 @@ function Kvadrat($a=10)
 Primjer. Ispišite 10 slučajnih brojeva između 10 i 100 te za parne brojeve izračunati korijen broja koristeći funkciju korjen, a za neparni
 kvadrat broja koristeći funkciju kvadrat. Funkcija sa više parametara - function ZbrojiBrojeve($x1,$x2); Primjer. Izgenerirati 10 parova
 slučajnih brojeva između 10 i 99 te pomoću funkcije ZbrojiBrojeve ispisati određeni rezultat.
+FUNKCIJE KOJE VRAĆAJU VRIJEDNOST
+to su funkcije koje imaju return type i zapravo su sve funkcije dosad void type, jer ne vraćaju nikakvu vrijednost, nego nešto
+ispisuju vraća vrijednost kada nam zatreba. return nešto. kada dobijemo false, neće ništa ispisati. ono što će ispisati je 
+ništa. false nema vrijednost kao i null trebamo castati u int kako bi dobili reprezentaciju kao nulu ili false kao nekakvu 
+vrijednost. (int) nešto. Primjer. Potrebna je funkcija kojoj ćemo za prosljeđeni datum vratiti naziv dana na hrvatskom jeziku.
+Ako je godina prijestupna, veljača ima 29 dana, inače veljača ima 28 dana. Za sve ostale situacije su 31 ili 30. Moramo znati 
+sklopiti jer inače nam neće raditi ni strtotime ako bilo koji datum recimo 31.2 neke godine ili 30.2. Ne smijemo to dozvoliti.
+Kako se branimo? Idemo prvo riješiti ukoliko se pojavi mjesec 2. Imamo veljaču mjesec 2, moramo vidjeti koja godina je u pitanju.
+Što ako je godina prijestupna? Kada je prijestupna? Kada je djeljiva sa 4. Kada je ostatak 0. Riješili smo drugi mjesec. Ako je 
+slučajno mjesec 1 ili (idemo riješavati za 31 dan) 12. Pokrili smo mjesece za 31 dan. Za sve ostalo je 30. Prije kraja funkcije, 
+kažemo return datum. Dodamo još u funkciju i vodeće nule. Za mjesece i dane.
+Za vježbu izgenerirati 10 slučajnih datuma i preko funkcije vrati dan za datum dobiti dane za te datume.
+Potrebno je napraviti funkciju koja prima tri parametra 2 broja i operaciju +,-,*,/ i %. Ovisno o odabranoj operaciji, izračunava
+se rezultat korištenje switch kontrolne strukture. Kod operacija d i mod ugraditi zaštitu od djeljenja sa nulom. Funkcija treba
+vratiti konačni rezultat operacije s brojevima. U slučaju pogrešne operacije, funkcija treba vratiti  pogrešna operacija. U 
+switchu kod defaulta ne mora biti break. Taj se slučaj izvršava stalno ako nije pronađena vrijednost.
+                                                   ORGANIZACIJA KODA U VIŠE DATOTEKA
+require, include, require_once, include_once
+cilj: čuvanje dijelova koda, skripta koja koristi drugu skriptu može koristiti sve resurse koji su u njoj definirani.
+include - uvijek će koristiti, kad god pozovemo skriptu, uključivati taj file, sve funkcije koliko god puta ga mi naveli
+u skripti, on će ga uvijek uključivati. Ukoliko ne postoji file koji želimo uključiti, php će nam vratiti warning i nastaviti će
+dalje izvršavati kod. Ako dva puta uključimo isti file, javiti će grešku. include_once - uključi funkcije samo jednom, ako 
+se nanovo pozove, ignorirati će. require - može sa zagradom i bez -"svefunkcije.php" - ("svefunkcije.php"). Ako ponovno 
+uključimo dobijemo cannot redeclare ako kažemo require_once  uključi opet. Ukoliko ne postoji skripta za uključivanje,
+odmah će se javiti error, kod dalje ne izvršava. include izvršava sve čak i poslje warninga. Ako nam je zbilja potreban 
+neki file, tipa veza prema bazi, dobro je koristiti require_once jer nam je dosta bitno da postoji taj file, ukoliko ne postoji file, 
+mi nemamo dalje što raditi ako nam program ovisi o podacima iz tablice. Odsad nadalje ćemo to koristiti radi bolje organizacije
+koda. Require uzrokuju fatal error i prekida izvršavanje koda, include uzrokuje upozorenje. 
+Require koristiti kada je neka datoteka vitalna za funkcioniranje skripte (uključivanje metoda ili klasa neophodne za rad aplikacije)
+Include koristimo kada imamo datoteku koju trebamo uključiti i aplikacija može nastaviti rad i bez toga (uključivanje datoteka s
+elementima korisničkog sučelja (header,footer) čije izostajanje neće uzrokovati prekid koda.

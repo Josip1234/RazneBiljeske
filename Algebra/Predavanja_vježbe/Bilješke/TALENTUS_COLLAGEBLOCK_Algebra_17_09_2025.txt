@@ -1,0 +1,90 @@
+                                                  FOR PETLJA
+Isto jedna kontrolna struktura koja se koristi kada unaprijed znamo koliko želimo ponavljati neki blok naredbi kada i kod while
+-smo također imali da smo znali unaprijed, ali to je kada znamo točno kad inicijaliziramo vrijednost i kažemo striktno dokle će
+se izvršavati. Recimo, while petlja se može izvršavati dokle god imamo podataka, dok budemo radili datoteke, čitanje iz datoteka,
+dokle god imamo podataka, ne znamo do kad ćemo nešto čitati tako da unaprijed ne znamo koliko ima redova u nekoj tablici, datoteci
+itd... For zna unaprijed. Ona se smatra najkompleksnijom petljom od sve četiri petlje, razlikuje se od while petlje, što već ima u
+sebi ugrađenu kontrolu brojača, ima inicijalizaciju $i=1, ima uvjet odmah, ima inkrement sve u jednoj liniji.Kod while petlje 
+se zna dogoditi da se zaboravi staviti inkrementator kad se ispisuje niz brojeva, pa se može dogoditi da ode u beskonačnu petlju.
+I na kraju se browser zablokira, zbog beskonačne petlje. Ovdje nas php prisiljava da stavimo inicijalizaciju, uvjet i inkrementator.
+Inicijalizacija postavlja početnu vrijednost. Uvjet određuje dokle će se petlja izvršavati. Inkrement ili dekrement je promjena
+brojača nakon svake operacije ++ ili --. While se koristi kad ne znamo unaprijed koliko će se puta izvršiti, for kada znamo.
+Slično kao kod while, izvršiti će se nijedanput ili minimalno jedanput.(niti jedanput ako uvjet nije ispunjen) Primjeri.
+file petlja_for_php Ispis brojeva od 1 do 10 for($br=1;$br<=10;$br++){...} Ispis brojeva od 20 do 10 Inkrement može biti i za 2
+Ispis parnih brojeva od 1 do 30 Prekid petlje se radi sa break. Ispisati iznose od 100 do 200. Kod iznosa 150 napraviti prekid 
+iz petlje. Ugnježđena petlja - petlja unutar petlje Primjer. Ispisati brojeve od 1 do 10 te pored svakog broja ispisati sve one
+koje su manji od njega. 
+for($i=1;$i<=10;$i++){
+           ...
+           for($j=0;$j<$i;$j++){
+                        ...
+           }
+}
+Primjer. drugi file for_petlja_primjer1.php
+Potrebno je ispisati brojeve od 1 do 30 u for petlji, te kod svkog broja ispisati dali je prost ili složen. Napomena: složen je
+onaj broj koji ima više od 2 djelitelja. Broj djeljitelja definiramo u prvoj petlji. (ako ćemo za svaki od brojeva brojiti koliko
+ima djelitelja). Svaki put kad naiđemo na broj, kad obradimo broj 5, idemo na 6,pa moramo poništiti djelitelj na 0, poništiti ga
+          $djelitelj>2 ? "-složen":"prost";
+Primjer 2. Potrebno je napraviti tablicu množenja: Tablica množenja do 5x5
+                                   1 2 3 4 5 
+ 				   2 4 6 8 10
+                                   3 6 9 12 15
+                                   4 8 12 16 20
+                                   5 10 15 20 25
+Potrebno je izračunati faktorijele nekog slučajnog broja u rasponu od 3 do 8 npr. 5=5*4*3*2*1=120 Faktorijel je množenje tog broja
+sa svakim brojem nižim od prethodnog i tog idućeg. Za revelantan rezultat za faktorijel, potrebno je inicijalizirati na jedinicu.
+Potrebno je napraviti ovakvu piramidu pomoću for petlje: 
+                                   1
+                                   1 2
+                                   1 2 3
+                                   1 2 3 4
+                                   1 2 3 4 5
+                                                      STRINGOVI
+String je tip podatka u php-u koji se može sastojati od niza slova, brojeva, simbola, razmaka i tako dalje. Koristi se za rad
+sa tekstom, piše se u navodnicima. Može biti jednostruki, može biti dvostruki. Primjer. $recenica="Danas je srijeda, sredina tjedna.";
+Koliko je string velik? $duljina=strlen() - ugrađena funkcija koja računa duljinu stringa, ubrajaju se i razmaci (32)
+Svaki znaku stringu ima svoju poziciju. D je na poziciji 0, 1,2,3,4,5,6,7,8,9... s je slovo na poziciji 4, razmak je na poziciji 5,
+slovo e na poziciji 7 drugo s je na poziciji 9. Zadnja pozicija je 31. Ako počinje od 0, ide na 0-31. Duljina stringa je 32, od 
+0 do 31. Prvi znak od 0 do 31. Potrebno je ispisati prvi znak. substr($recenica,0,1) - ugrađena funkcija koja služi za izdvajanje
+zankova iz stringa, gdje je recenica string koji se koristi, broj 0 je početna pozicija odakle krećemood nule, a jedinica predstavlja
+broj znakova koliko ćemo uzimati od početne pozicije. Treći znak - substr($recenica,2,1) - krenimo od pozicije 2, daj nam samo 1 znak
+Šesti i sedmi znak (može zapravo sedmi i osmi) - substr($recenica,6,2) krećemo od 6  želimo dva znaka zadnji znak - substr($recenica,
+-1); - -1 je zadnji znak u stringu Za zadnja dva -2, i tako dalje. Ispišimo svaki znak iz trenutnog stringa u novom redu. Krećemo od 
+nula, pa do koliko ih ima i idemo ++. Uvjet u for petlji: for($i=0;$i<strlen($recenica);$i++) Zašto manje? Jer ih ima 32, tj indeks
+počinje od nula, završava sa 31. Ako uzmemo 32, javiti će nam grešku. substr($recenica,$i,1); Ispisati koliko puta se pojavilo slovo a.
+$broj_slova=substr_count($recenica, "a"); - ugrađena funkcija koja računa koliko se puta određeni znak pojavio u nekom stringu. Nađimo
+poziciju nekog stringa. $pozicija_zarez=strpos($recenica,","); Izdvoji dio stringa iza zareza. $izdvojeni_string=substr($recenica, 
+$pozicija_zarez,strlen($recenica)); Stavimo zarez+1 pa bi nam preskočio tu poziciju, i stavio sredina tjedna. Kad budemo ispisivali
+sve filmove iz baze koji počinju tim slovom uzmemo prvi znak nekog filma i želim sve filmove koji počinju sa tim slovom. Uzmemo
+prvi string odemo u tablicu i pretražujemo s tim slovom.
+                                                      FUNKCIJE
+Su blokovi koda koji se mogu više puta koristiti i izvršavati one nam pomažu da organiziramo kod, da ga ponovno koristimo, možemo
+ga i održavati, proširivati itd. Cilj: skratiti korištenje duplog koda, da ga ne dupliramo, staviti ćemo u funkciju i pozvati po
+potrebi. Funkcija se sastoji od više djelova: identifikatora funkcije, parametara odnosno ulaznih vrijednosti, i tijela funkcije
+(naredbe koje se izvršavaju). Mogu imati povratne vrijednosti. To su rezultati koje funkcija vraća, a ne ispisuje. Primjer. Funkcija
+se definira ključnom riječi function. Zatim definiramo ime funkcije tj. identifikator pomoću kojeg ćemo je pozivati. function Ispis();
+Drugi dio funkcije su ulazni parametri kojeg može ali ne mora imati ali obavezno se navodi zagrada i treći dio funkcije su tijelo 
+u vitičastim zagradama koje sadrži naredbe koje se izvode. Funkcija se definira kao blok operacija koja će nešto raditi. Da bi 
+vidjeli što ta funkcija radi, moramo je pozvati. Pozivamo funkciju preko njenog identifikatora. I svih njenih parametara koji 
+su definirani. Ispis(); Možemo je pozvati opet. Koliko god puta želimo. Može se pozvati i prije i poslje. Nije bitno gdje ćemo
+je pozvati i u kojem trenutku.LOkalne varijable djeluju samo unutar funkcije. Postoje i globalne, i moramo javiti funkciji ako 
+te iste trebamo koristiti u funkciji, da koristimo globalnu varijablu. 
+$kolicina=100;
+function Ukupno(){
+       global $kolicina;
+          ...
+}
+Dobijemo error ako ne koristimo global da kažemo funkciji da postoji globalna varijabla kolicina koja je definirana izvan funkcije.
+Varijabla kolicina nije bila vidljiva. Ako unutar funkcije ukupno promijenimo vrijednost količine, za duplo, i ponovno ispišemo
+vrijednost količine, količina postaje 200. Funkcija može djelovati na promjene vrijednosti globalne varijable. Gdje god da dalje 
+koristimo količinu, biti će vrijednost 200. Ako koristimo prije funkcije, tj poziva funkcije, biti će i dalje 100. Tek nakon što 
+smo pozvali funkciju koja utječe na promjenu globalne varijable, dobiti ćemo tu vrijednost. Statičke varijable - kako čuva vrijednost.
+static $brojac=0  u funkciji brojac(),brojac(),brojac() zadržava svoju vrijednost između funkcije, između poziva ali neće utjecati
+na tu istu globalnu varijablu ako postoji. Funkcije sa parametrima - Primjer. 
+function Korijen($x=25) -> ako ne postavimo parametar tijekom poziva pozovemo korijen() uzme se vrijednost x definiran kao parametar
+u funkciji, tj. broj 25. Broj parametara treba biti identičan. Korijen($x=100) - možemo i tako staviti, obično se pri pozivu stavlja samo 
+brojka.
+function Kvadrat($a=10)
+Primjer. Ispišite 10 slučajnih brojeva između 10 i 100 te za parne brojeve izračunati korijen broja koristeći funkciju korjen, a za neparni
+kvadrat broja koristeći funkciju kvadrat. Funkcija sa više parametara - function ZbrojiBrojeve($x1,$x2); Primjer. Izgenerirati 10 parova
+slučajnih brojeva između 10 i 99 te pomoću funkcije ZbrojiBrojeve ispisati određeni rezultat.

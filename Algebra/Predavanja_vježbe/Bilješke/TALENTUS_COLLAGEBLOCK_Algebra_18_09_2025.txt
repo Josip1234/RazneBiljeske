@@ -1,0 +1,107 @@
+                                                       NIZOVI(POLJA)
+Posebne vrste varijabli koje za razliku od običnih varijabli mogu sadržavati u jednom trenutku više vrijednosti po jednim imenom.
+Kada dođe potreba da u jednu varijablu pospremimo više vrijednosti, ta nam varijabla automatski poprima prirodu niza. Postoji 
+tri vrste nizova: Indeksirani nizovi (indeksi nu nam redni brojevi, od 0 do n) svaki element ima svoj indeks, odnosno poziciju ili 
+ključ kako god želimo. Asocijativni nizovi - gdje za ključeve možemo koristiti bilo što, tekstove, kombinacije, i tako dalje.
+Višedimenzionalni nizovi - nizovi koji sadrže druge nizove. 
+                                                       INDEKSIRANI NIZOVI
+Kreiranje niza - postoji više načina da se kreira niz. $auti=array("BMW","Audi","Kia"...);
+                                                       //indeksi     0      1     2
+Svaki element ima svoj indeks. Fraze za indeks: ključ, pozicija, indeks sve je isto.
+Kako se pristupa elementima niza? Preko njihovog imena. U uglatim zagradama vrijednost indeksa.  Primjer, želimo ispisati:
+Ja vozim BMW. echo "<br>Ja vozim:".$auti[0];
+Ukoliko želimo vidjeti strukturu niza: print_r($auti); Vidimo strukturu niza i svake element niza sa svojim popratnim indeksom.
+Ako ispišemo sa var_dump($auti) dobiti ćemo da je to array od 7 elemenata, prvi element je string 3 auto, govori koji je tip,
+koliko je velik i njegovu vrijednost. Kolika je duljina niza? Funkcija count() ili sizeof(); (nema razlike u funkcijama). Kako
+ispisati elemente niza? Znamo da imamo indekse od 0 do n, i koliko ima elemenata, koristimo for petlju.
+for($a=0;$a<sizeof($auti);$a++){
+            echo "<br>Element niza:".$auti[$a];
+}
+Kako dodati element u niz? $auti[]="Fiat"; - stavi ga na zadnje mjesto.
+array_push($auti,"Hyundai","Citroen");. Kako obrisati element iz niza? Recimo 4. element. Četvrti element je na poziciji 3.
+unset($auti[4]); Obrisali smo element, no imamo prazninu nakon drugog elementa u nizu, pa ako želimo ispisati polje sa for
+petljom, trebamo izvršiti provjeru. U petlju staviti odmah na početku: (provjeravamo dali postoji ključ unutar niza)
+if(array_key_exists($a,$auti)){       -$a - indeks od petlje
+           ispiši niz
+}
+To nije riješenje. Nepouzdano je koristiti for petlje. Bolje je koristiti foreach petlju. Služi za ispis i manipulaciju 
+nizovima. Ispis:
+foreach($auti as $auto){
+        echo "<br>Auto je:".$auto;
+}
+$auti[14]="Suzuki" - još jedna primjer unosa novog elementa u niz
+Osim vrijednosti, foreach može ispisati i ključ. 
+foreach($auti as $poz=>$element){
+       echo "<br>Pozicija:".$poz."=>".$element;
+}
+empty($niz) - funkcija koja provjerava dali je varijabla ili niz prazan. Trebamo castati u int da nam vrati 0 ili jedinicu
+Primjer. dali postoji Opel u nizu? Niz možemo pretraživati. 
+if(in_array("Opel",$auti){
+            echo "Postoji";
+}else{
+        echo "Ne postoji";
+}
+Kako možemo spojiti string, nekakvu rečenicu u niz? $izraz="Danas je četvrtak i lijepo je vrijeme";
+Kako možemo pretvoriti izraz u niz tako da ode svaka riječ u element niza? $niz=explode(" ",$izraz); (prvi argument je delimiter
+prema kojem razdvajamo)
+$gradovi=array("Zagreb","Split","Rijeka","Osijek"); Kako njega možemo pretvoriti u tekst? $gradovi_string=implode("-",$gradovi);
+gdje je prvi argument mjesto gdje postavljamo delimiter. echo $gradovi_string Ako želimo pronaći na kojem indeksu se nalazi Osijek
+$indeks=array_search("Osijek",$gradovi); $brojevi[0]=35; $brojevi[1]=22; Još jedan stvaranja niza. Primjeri. Potrebno je pronaći
+najmanji element niza. Najveći element niza. Prosječni element. Zbrojiti one na parnim pozicijama. Ispisati koliko ima elemenata.
+Prosjek=suma svih elemenata/koliko ih ima. Sortiranje niza - uzlazno postoje gotove funkcije. Primjer. 35,22,17,19,29,41,32,27
+Da bi sortirali, trebamo dva puta pretraživati. Trebaju nam dvije ugnježđene petlje kojima dupliciramo polje i uspoređujemo 
+vrijednost prvog sa drugim elementom i zamjenjujemo veću ili manju vrijednost sa prvom ili drugom pozicijom, ovisno dali tražimo
+uzlazno ili silazno sortiranje. Prva petlja je za gornji niz, druga za donji. Sortiranje određujemo pomoću for petlje.
+sort($brojevi) - sortiranje uzlazno (manji prema većem)
+rsort($brojevi) - sortiranje silazno (od većeg prema manjem)
+sortiranje uzlazno po indeksu ksort($brojevi); (key sort)
+silazno po indeksu krsort($brojevi); (key reverse sort);
+Primjer. Zadana je rečenica Moje ime je Davorin Bogović i sve oko mene je crno bijeli svijet. Potrebno je rečenicu pretvoriti
+u niz te ispisati svaku vrijednost. U produžetku ispisati koliko je svaka vrijednost velika(duljina), te ukoliko je veća od 
+5, ispisati 5 i više znakova, inače ispisati manje od 5 znakova. npr. Davorin =>7=> 5 i više znakova.
+Potrebno je kreirati indeksirani niz sa 10 brojeva koji se ne smiju ponavljati (u rasponu od 10 do 99) provjeru postojanja 
+duple vrijednosti napraviti pomoću funkcije provjeri duplog koja kao parametre prima niz i broj koji se provjerava. Ako funkcija
+vrati true, to je oznaka da postoji broj. U suprotnom, vraća false.
+                                                    ASOCIJATIVNI NIZOVI
+To su nizovi u kojima se vrijednosti ne spremaju pod numeričke indekse nego pod ključeve koji mogu biti stringovi.
+Ključ predstavlja ime ili oznaku podatka a vrijednost podatak koji je povezan s tim ključem. Bitni su zbog superglobalnih
+varijabli get, post, session, cookie ponašaju se kao asocijativni nizovi jer imaju svoj ključ i svoju vrijednost.
+Primjer. $imena=array("Pero"=>45,"Dado"=>15...);
+Kako pristupamo elementima ovih nizova? Pristup preko ključeva. $imena["Dado"]; Kako dodajemo novi element? $imena["Bobo"]=32; 
+- nalazi se na zadnjem mjestu. Kod asocijativnih nizova, možemo identificirati prvi ključ, odnosno prvu vrijednost u modu u 
+kojem se niz nalazi. Što znači u modu? Trenutna situacija u kojoj se nalazi. Kako bi dobili trenutni ključ? $key1=key($imena);
+Kako bi dobili trenutnu vrijednost? $vol1=current($imena); Kako bismo našli najstariju osobu? Proglasiti isto tako neku osobu
+najstarijom, preko ključa doći do prve vrijednosti. $maksime=key($imena); $maxgodine=current($imena); Idemo kroz foreach petlju,
+uspoređujemo godine i dodjeljujemo vrijednost. Kako dobiti dane na hrvatskom? $dani=array("Monday"=>"Ponedjeljak", "Tuesday"=>
+"utorak"...); $currentday=date("l"); $dani[$currentDay]; Primjer. Zadan je asocijativni niz vlasnika i njihovih automobila
+gdje je ključ automobil a vrijednost vlasnik. Potrebno je u novi asocijativni niz dodati koliko koji vlasnik posjeduje 
+automobila tako što će ključ biti vlasnik, a vrijednost broj automobila koje on posjeduje. Npr. Vlasnik Pero posjeduje 4
+automobila. asort($vlasnici) - sortiranje uzlazno, arsort($vlasnici) - sortiranje silazno (sve po vrijednosti) 
+sortiranje po ključu - ksort($vlasnici); - uzlazno, krsort($vlasnici); - silazno
+                                                    VIŠEDIMENZIONALNI NIZOVI
+To su nizovi koji sadrže druge nizove kao svoje elemente. Omogućujemo spremanje podataka u tabličnom hijerarhijskom obliku. To 
+su najčešće korišteni 2d tip array unutar array-a. 2d nizovi u praksi 
+Primjer $matrica=[
+                   [1,2,3],
+                   [4,5,6],
+                   [7,8,9]
+                 ];
+Kako ispisati elemente?
+foreach($matrica as $i=>$red){
+            foreach($red as $j=>$element){
+                     echo $element.$i
+            }
+}
+Primjer Multidimenzijonalni niz osobe
+$Osobe=[
+         [
+           "ime"=>"Ana",
+           "prezime"=>"Anić",
+           "godine"=>20,
+         ]
+         ...
+];
+foreach($osobe as $osoba){
+         echo "<br>Ime: ".$osoba["ime"];
+}
+                                                      

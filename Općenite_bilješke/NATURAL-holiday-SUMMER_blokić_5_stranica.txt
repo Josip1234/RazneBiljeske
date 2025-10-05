@@ -1,0 +1,29 @@
+Talentus_collageblock_algebra_25_8_2025.txt 27.08.2025. 28.07.2025 01.09.2025 08.09.2025 10.09.2025 15.09.2025
+EMPWR kontakt: Industrijska ulica 15 Nova Gradiška, 35400 +385 35 386 250 info@empwr.world Katica Miholić
+Informatika Fortivo d.o.o. za informatiku i usluge posao@fortivo.hr setcookie - 3600 postavlja vrijeme unatrag
+i briše cookie time()-3600 template 1: do div id saržaja zaglavlje, poslje div sadržaja podnožje, a možemo i 
+navigaciju staviti u poseban template. Euro na tipkovnici se dobije kombinacijom tipki ALTGR+R kraća php
+sintaksa: if(): endif; Tijekom ispisa uz kombinaciju sa htmlom umjesto <?php <?= u href također možemo staviti
+? bez naziva jer se pretpostavlja da se radi o istoj skripti arhivirati socialnet dodati template 
+                                                          -header i sadržaj ništa trenutno 
+                                         -----------------------------------------------------------
+					 -							   
+					 -
+					 -
+					 -
+				         -	
+					 -
+                                         -	
+ 					 -
+                                         -
+                                         -
+                                         -
+                                         -
+                                         -
+                                         -
+                                         -
+                                         - 
+                                         -d.m.Y | H:i:s|Prijavljen ili nije prijavljen
+                                         footer datum vrijeme status korisnika
+                                         footer template
+Zapisati bilješke tamo gdje je github za bilješke, napisati dodatno u word napraviti templates, arhivirati stare socialnet verzije.
